@@ -7,6 +7,15 @@ from django.contrib.auth.models import User
 from django.db.models import Sum
 
 
+class ProductCategory(models.Model):
+    class Meta:
+        ordering = ["name"]
+
+    name = models.CharField("Nom", max_length=25)
+    available_on_website = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):

@@ -25,5 +25,5 @@ from .views import (
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/product", ProductAPIView.as_view()),
-   
+    path("api/productcategory", ProductCategoryAPIView.as_view()),
 ]
