@@ -1,0 +1,58 @@
+<ngx-htl-horizontal-timeline [items]="items"></ngx-htl-horizontal-timeline>
+
+<ng-container *ngIf="products.length !=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td><img style="width: 120px;" src="http://127.0.0.1:8000{{item.image}}" alt=""></td>
+                            <th style="width: 12%;">{{item.price}} €</th>
+                            <td style="width: 12%;">{{item.quantity}}</td>
+                            <td style="width: 12%;">{{item.quantity *  item.price | number : '1.2-2'}} €</td>
+                            <td>
+                                <button (click)="removeItem(item)" class="btn btn-danger"><fa-icon [icon]="faTrash"></fa-icon></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td><button (click)="emptycart()" class="btn btn-danger">Vider Panier</button></td>
+                            <td><button routerLink="/products" class="btn btn-primary">Continuer vos achats</button></td>
+                            <td><button class="btn btn-success" routerLink="/dateorder">Suivant</button></td>
+                            <td><strong>Total : {{grandTotal | number : '1.2-2'}} €</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Mon Panier</h5>
+        </div>
+        <div class="center">
+            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+            <h4>Votre panier est vide</h4>
+            <h6>Ajouter des produits</h6>
+            <button routerLink="/products" class="btn btn-primary">Voir les produits</button>
+        </div>
+    </div>
+</ng-container>
