@@ -20,10 +20,16 @@ from django.contrib import admin
 from .views import (
     ProductAPIView,
     ProductCategoryAPIView,
+    OrderAPIView,
+    OrderLineAPIView,
+    OrderConfirmAPIView,
 )
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/product", ProductAPIView.as_view()),
     path("api/productcategory", ProductCategoryAPIView.as_view()),
+    path("api/orderconfirm", OrderConfirmAPIView.as_view()),
+    path("api/order", OrderAPIView.as_view()),
+    path("api/orderline", OrderLineAPIView.as_view()),
 ]
