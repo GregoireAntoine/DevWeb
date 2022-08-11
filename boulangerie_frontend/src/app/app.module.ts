@@ -10,6 +10,7 @@ import { DateorderComponent } from './component/dateorder/dateorder.component';
 import { FormsModule } from '@angular/forms';
 import { NgxHorizontalTimelineModule } from 'ngx-horizontal-timeline';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { OrderConfirmComponent } from './component/order-confirm/order-confirm.component';
 @NgModule({
 
   declarations: [
@@ -19,7 +20,8 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
     ArticleCategoryComponent,
     CartComponent,
     DateorderComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderConfirmComponent
    ],
   imports: [
     BrowserModule,
