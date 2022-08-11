@@ -9,7 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateorderComponent } from './component/dateorder/dateorder.component';
 import { FormsModule } from '@angular/forms';
 import { NgxHorizontalTimelineModule } from 'ngx-horizontal-timeline';
-
+import { CheckoutComponent } from './component/checkout/checkout.component';
 @NgModule({
 
   declarations: [
@@ -18,7 +18,8 @@ import { NgxHorizontalTimelineModule } from 'ngx-horizontal-timeline';
     HomeComponent,
     ArticleCategoryComponent,
     CartComponent,
-    DateorderComponent
+    DateorderComponent,
+    CheckoutComponent
    ],
   imports: [
     BrowserModule,
