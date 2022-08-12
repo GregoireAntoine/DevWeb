@@ -51,3 +51,23 @@ class OrderLineSerializer(ModelSerializer):
     class Meta:
         model = OrderLine
         fields = ["order_id", "product_id", "quantity", "price"]
+
+
+class DeletePostSerializer(ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"
+
+
+class OrderCommandSerializer(ModelSerializer):
+    class Meta:
+        model = Order
+        fields = [
+            "id",
+            "user_id",
+            "ref",
+            "date_order",
+            "date_takeaway",
+            "total_quantity",
+            "total_price",
+        ]
