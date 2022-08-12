@@ -6,6 +6,7 @@ import { ArticleCategoryComponent } from './component/article-category/article-c
 import { DateorderComponent } from './component/dateorder/dateorder.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { OrderConfirmComponent } from './component/order-confirm/order-confirm.component'
+import { MycommandComponent } from './component/mycommand/mycommand.component';
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'dateorder', component: DateorderComponent},
   {path:'checkout', component: CheckoutComponent},
   {path:'order_confirm', component: OrderConfirmComponent},
+  {path:'mycommand', component: MycommandComponent},
 ];
 
 @NgModule({

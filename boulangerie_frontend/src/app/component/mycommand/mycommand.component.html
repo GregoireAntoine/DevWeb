@@ -1,0 +1,33 @@
+
+
+
+<table *ngFor="let cat of data;" style="width:70%;margin-top:5rem;"class="table table-bordered">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">ref : {{cat.order.ref}}</th>
+      <th scope="col">Passé le : {{cat.order.date_order}}</th>
+      <th scope="col">Prévu le : {{cat.order.date_takeaway}}</th>
+
+      <th scope="col" class="text-center"> <button (click)="deletefunction(cat.order.ref)" ><fa-icon [icon]="faRibbon"></fa-icon></button></th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let product of cat.orderline;" >
+
+      <td class="text-center">{{product.name}}</td>
+     <td class="text-center" >{{product.quantity}}</td>
+     <td class="text-center">{{product.price}} €</td>
+    </tr>
+<tr>
+  <th scope="col"></th>
+      <th scope="col">Quantité : {{cat.order.total_quantity}}</th>
+      <th scope="col">Total : {{cat.order.total_price | number : '1.2-2'}} €</th>
+
+      <th scope="col"></th>
+</tr>
+  </tbody>
+</table>
+
+<br><br>

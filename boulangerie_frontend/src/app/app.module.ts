@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { NgxHorizontalTimelineModule } from 'ngx-horizontal-timeline';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { OrderConfirmComponent } from './component/order-confirm/order-confirm.component';
+import { MycommandComponent } from './component/mycommand/mycommand.component';
+
 @NgModule({
 
   declarations: [
@@ -21,7 +23,8 @@ import { OrderConfirmComponent } from './component/order-confirm/order-confirm.c
     CartComponent,
     DateorderComponent,
     CheckoutComponent,
-    OrderConfirmComponent
+    OrderConfirmComponent,
+    MycommandComponent,
    ],
   imports: [
     BrowserModule,
