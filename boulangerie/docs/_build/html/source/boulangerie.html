@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>boulangerie package &mdash; Doratiotto 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Doratiotto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">boulangerie package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-boulangerie.admin">boulangerie.admin module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.asgi">boulangerie.asgi module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.forms">boulangerie.forms module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.models">boulangerie.models module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.settings">boulangerie.settings module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.urls">boulangerie.urls module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.views">boulangerie.views module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.wsgi">boulangerie.wsgi module</a></li>
+<li><a class="reference internal" href="#module-boulangerie">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Doratiotto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>boulangerie package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/boulangerie.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="boulangerie-package">
+<h1>boulangerie package<a class="headerlink" href="#boulangerie-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="boulangerie.migrations.html">boulangerie.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0001_initial">boulangerie.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0002_product_prix_product_prix_currency_and_more">boulangerie.migrations.0002_product_prix_product_prix_currency_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0003_productcategory_product_product_category_id">boulangerie.migrations.0003_productcategory_product_product_category_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0004_product_image">boulangerie.migrations.0004_product_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0005_command">boulangerie.migrations.0005_command module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix">boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0007_alter_product_image">boulangerie.migrations.0007_alter_product_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0008_alter_product_image">boulangerie.migrations.0008_alter_product_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0009_alter_product_image">boulangerie.migrations.0009_alter_product_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0010_order">boulangerie.migrations.0010_order module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0011_ordertest">boulangerie.migrations.0011_ordertest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more">boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0013_order_customer">boulangerie.migrations.0013_order_customer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0014_alter_order_customer_userid">boulangerie.migrations.0014_alter_order_customer_userid module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more">boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more">boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0017_remove_listorder_product_category_id">boulangerie.migrations.0017_remove_listorder_product_category_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0018_listorder_image">boulangerie.migrations.0018_listorder_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0019_alter_listorder_image">boulangerie.migrations.0019_alter_listorder_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0020_order_orderline_delete_listorder_and_more">boulangerie.migrations.0020_order_orderline_delete_listorder_and_more module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0021_bestsell">boulangerie.migrations.0021_bestsell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0022_delete_bestsell">boulangerie.migrations.0022_delete_bestsell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0023_bestsell">boulangerie.migrations.0023_bestsell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0024_bestsell_quantity">boulangerie.migrations.0024_bestsell_quantity module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0025_alter_bestsell_product_id">boulangerie.migrations.0025_alter_bestsell_product_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0026_alter_bestsell_product_id">boulangerie.migrations.0026_alter_bestsell_product_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0027_bestsell_image">boulangerie.migrations.0027_bestsell_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0028_remove_bestsell_image">boulangerie.migrations.0028_remove_bestsell_image module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0029_product_count_sold">boulangerie.migrations.0029_product_count_sold module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0030_product_available_on_website">boulangerie.migrations.0030_product_available_on_website module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0031_productcategory_available_on_website">boulangerie.migrations.0031_productcategory_available_on_website module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations.0032_alter_product_options">boulangerie.migrations.0032_alter_product_options module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.migrations.html#module-boulangerie.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="boulangerie.tests.html">boulangerie.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.tests.html#module-boulangerie.tests.test_create">boulangerie.tests.test_create module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.tests.html#module-boulangerie.tests.test_order">boulangerie.tests.test_order module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boulangerie.tests.html#module-boulangerie.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-boulangerie.admin">
+<span id="boulangerie-admin-module"></span><h2>boulangerie.admin module<a class="headerlink" href="#module-boulangerie.admin" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.admin.OrderAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.admin.</span></span><span class="sig-name descname"><span class="pre">OrderAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.admin.OrderAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.OrderAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['ref',</span> <span class="pre">'date_order',</span> <span class="pre">'date_takeaway',</span> <span class="pre">'total_quantity',</span> <span class="pre">'total_price']</span></em><a class="headerlink" href="#boulangerie.admin.OrderAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="boulangerie.admin.OrderAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#boulangerie.admin.OrderAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.admin.OrderLineAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.admin.</span></span><span class="sig-name descname"><span class="pre">OrderLineAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.admin.OrderLineAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.OrderLineAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['order_id',</span> <span class="pre">'product_id',</span> <span class="pre">'price',</span> <span class="pre">'quantity',</span> <span class="pre">'image']</span></em><a class="headerlink" href="#boulangerie.admin.OrderLineAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="boulangerie.admin.OrderLineAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#boulangerie.admin.OrderLineAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.admin.</span></span><span class="sig-name descname"><span class="pre">ProductAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.admin.ProductAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'price',</span> <span class="pre">'product_category_id',</span> <span class="pre">'count_sold',</span> <span class="pre">'available_on_website']</span></em><a class="headerlink" href="#boulangerie.admin.ProductAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['product_category_id',</span> <span class="pre">'available_on_website']</span></em><a class="headerlink" href="#boulangerie.admin.ProductAdmin.list_filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#boulangerie.admin.ProductAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('id',</span> <span class="pre">'name')</span></em><a class="headerlink" href="#boulangerie.admin.ProductAdmin.ordering" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'price']</span></em><a class="headerlink" href="#boulangerie.admin.ProductAdmin.search_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductCategoryAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.admin.</span></span><span class="sig-name descname"><span class="pre">ProductCategoryAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.admin.ProductCategoryAdmin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductCategoryAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'available_on_website']</span></em><a class="headerlink" href="#boulangerie.admin.ProductCategoryAdmin.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductCategoryAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#boulangerie.admin.ProductCategoryAdmin.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.admin.ProductCategoryAdmin.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">change</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.admin.ProductCategoryAdmin.save_model" title="Permalink to this definition"></a></dt>
+<dd><p>Given a model instance save it to the database.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.admin.bestS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.admin.</span></span><span class="sig-name descname"><span class="pre">bestS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.admin.bestS" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.bestS.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['product_id',</span> <span class="pre">'quantity']</span></em><a class="headerlink" href="#boulangerie.admin.bestS.list_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="boulangerie.admin.bestS.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#boulangerie.admin.bestS.media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.admin.bestS.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('quantity',</span> <span class="pre">'product_id')</span></em><a class="headerlink" href="#boulangerie.admin.bestS.ordering" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.asgi">
+<span id="boulangerie-asgi-module"></span><h2>boulangerie.asgi module<a class="headerlink" href="#module-boulangerie.asgi" title="Permalink to this heading"></a></h2>
+<p>ASGI config for boulangerie project.</p>
+<p>It exposes the ASGI callable as a module-level variable named <code class="docutils literal notranslate"><span class="pre">application</span></code>.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/">https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/</a></p>
+</section>
+<section id="module-boulangerie.forms">
+<span id="boulangerie-forms-module"></span><h2>boulangerie.forms module<a class="headerlink" href="#module-boulangerie.forms" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.forms.DateForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.forms.</span></span><span class="sig-name descname"><span class="pre">DateForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.forms.DateForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Form</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.forms.DateForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'date':</span> <span class="pre">&lt;django.forms.fields.DateTimeField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#boulangerie.forms.DateForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.forms.DateForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'date':</span> <span class="pre">&lt;django.forms.fields.DateTimeField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#boulangerie.forms.DateForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="boulangerie.forms.DateForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#boulangerie.forms.DateForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.models">
+<span id="boulangerie-models-module"></span><h2>boulangerie.models module<a class="headerlink" href="#module-boulangerie.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.models.</span></span><span class="sig-name descname"><span class="pre">BestSell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.BestSell" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#boulangerie.models.BestSell.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#boulangerie.models.BestSell.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.a">
+<span class="sig-name descname"><span class="pre">a</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'&lt;django.db.models.fields.FloatField&gt;'</span></em><a class="headerlink" href="#boulangerie.models.BestSell.a" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#boulangerie.models.BestSell.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#boulangerie.models.BestSell.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.product_id">
+<span class="sig-name descname"><span class="pre">product_id</span></span><a class="headerlink" href="#boulangerie.models.BestSell.product_id" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.product_id_id">
+<span class="sig-name descname"><span class="pre">product_id_id</span></span><a class="headerlink" href="#boulangerie.models.BestSell.product_id_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.BestSell.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#boulangerie.models.BestSell.quantity" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.models.Order">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.models.</span></span><span class="sig-name descname"><span class="pre">Order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_takeaway</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_price</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.Order.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#boulangerie.models.Order.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.Order.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#boulangerie.models.Order.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.date_order">
+<span class="sig-name descname"><span class="pre">date_order</span></span><a class="headerlink" href="#boulangerie.models.Order.date_order" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.date_takeaway">
+<span class="sig-name descname"><span class="pre">date_takeaway</span></span><a class="headerlink" href="#boulangerie.models.Order.date_takeaway" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Order.get_next_by_date_order">
+<span class="sig-name descname"><span class="pre">get_next_by_date_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date_order&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order.get_next_by_date_order" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Order.get_next_by_date_takeaway">
+<span class="sig-name descname"><span class="pre">get_next_by_date_takeaway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date_takeaway&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order.get_next_by_date_takeaway" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Order.get_next_value">
+<span class="sig-name descname"><span class="pre">get_next_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order.get_next_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Order.get_previous_by_date_order">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date_order&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order.get_previous_by_date_order" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Order.get_previous_by_date_takeaway">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_takeaway</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date_takeaway&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order.get_previous_by_date_takeaway" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#boulangerie.models.Order.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#boulangerie.models.Order.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.orderline_set">
+<span class="sig-name descname"><span class="pre">orderline_set</span></span><a class="headerlink" href="#boulangerie.models.Order.orderline_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.ref">
+<span class="sig-name descname"><span class="pre">ref</span></span><a class="headerlink" href="#boulangerie.models.Order.ref" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Order.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Order.save" title="Permalink to this definition"></a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.total_price">
+<span class="sig-name descname"><span class="pre">total_price</span></span><a class="headerlink" href="#boulangerie.models.Order.total_price" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.total_quantity">
+<span class="sig-name descname"><span class="pre">total_quantity</span></span><a class="headerlink" href="#boulangerie.models.Order.total_quantity" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#boulangerie.models.Order.user_id" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Order.user_id_id">
+<span class="sig-name descname"><span class="pre">user_id_id</span></span><a class="headerlink" href="#boulangerie.models.Order.user_id_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.models.</span></span><span class="sig-name descname"><span class="pre">OrderLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.OrderLine" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.image">
+<span class="sig-name descname"><span class="pre">image</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.image" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#boulangerie.models.OrderLine.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.order_id">
+<span class="sig-name descname"><span class="pre">order_id</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.order_id" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.order_id_id">
+<span class="sig-name descname"><span class="pre">order_id_id</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.order_id_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.price">
+<span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.price" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.product_id">
+<span class="sig-name descname"><span class="pre">product_id</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.product_id" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.product_id_id">
+<span class="sig-name descname"><span class="pre">product_id_id</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.product_id_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.OrderLine.quantity">
+<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#boulangerie.models.OrderLine.quantity" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.models.Product">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.models.</span></span><span class="sig-name descname"><span class="pre">Product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prix_currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_category_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_sold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">available_on_website</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Product" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.Product.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#boulangerie.models.Product.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.Product.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#boulangerie.models.Product.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.available_on_website">
+<span class="sig-name descname"><span class="pre">available_on_website</span></span><a class="headerlink" href="#boulangerie.models.Product.available_on_website" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.bestsell_set">
+<span class="sig-name descname"><span class="pre">bestsell_set</span></span><a class="headerlink" href="#boulangerie.models.Product.bestsell_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.count_sold">
+<span class="sig-name descname"><span class="pre">count_sold</span></span><a class="headerlink" href="#boulangerie.models.Product.count_sold" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="boulangerie.models.Product.get_prix_currency_display">
+<span class="sig-name descname"><span class="pre">get_prix_currency_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;djmoney.models.fields.CurrencyField:</span> <span class="pre">prix_currency&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.Product.get_prix_currency_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#boulangerie.models.Product.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.image">
+<span class="sig-name descname"><span class="pre">image</span></span><a class="headerlink" href="#boulangerie.models.Product.image" title="Permalink to this definition"></a></dt>
+<dd><p>Just like the FileDescriptor, but for ImageFields. The only difference is
+assigning the width/height to the width_field/height_field, if appropriate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#boulangerie.models.Product.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;djmoney.models.managers.money_manager.&lt;locals&gt;.MoneyManager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#boulangerie.models.Product.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.orderline_set">
+<span class="sig-name descname"><span class="pre">orderline_set</span></span><a class="headerlink" href="#boulangerie.models.Product.orderline_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.price">
+<span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#boulangerie.models.Product.price" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.prix">
+<span class="sig-name descname"><span class="pre">prix</span></span><a class="headerlink" href="#boulangerie.models.Product.prix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.prix_currency">
+<span class="sig-name descname"><span class="pre">prix_currency</span></span><a class="headerlink" href="#boulangerie.models.Product.prix_currency" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.product_category_id">
+<span class="sig-name descname"><span class="pre">product_category_id</span></span><a class="headerlink" href="#boulangerie.models.Product.product_category_id" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.Product.product_category_id_id">
+<span class="sig-name descname"><span class="pre">product_category_id_id</span></span><a class="headerlink" href="#boulangerie.models.Product.product_category_id_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.models.</span></span><span class="sig-name descname"><span class="pre">ProductCategory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">available_on_website</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.models.ProductCategory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#boulangerie.models.ProductCategory.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#boulangerie.models.ProductCategory.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.available_on_website">
+<span class="sig-name descname"><span class="pre">available_on_website</span></span><a class="headerlink" href="#boulangerie.models.ProductCategory.available_on_website" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#boulangerie.models.ProductCategory.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#boulangerie.models.ProductCategory.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#boulangerie.models.ProductCategory.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.models.ProductCategory.product_set">
+<span class="sig-name descname"><span class="pre">product_set</span></span><a class="headerlink" href="#boulangerie.models.ProductCategory.product_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.settings">
+<span id="boulangerie-settings-module"></span><h2>boulangerie.settings module<a class="headerlink" href="#module-boulangerie.settings" title="Permalink to this heading"></a></h2>
+<p>Django settings for boulangerie project.</p>
+<p>Generated by ‘django-admin startproject’ using Django 4.0.5.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/4.0/topics/settings/">https://docs.djangoproject.com/en/4.0/topics/settings/</a></p>
+<p>For the full list of settings and their values, see
+<a class="reference external" href="https://docs.djangoproject.com/en/4.0/ref/settings/">https://docs.djangoproject.com/en/4.0/ref/settings/</a></p>
+</section>
+<section id="module-boulangerie.urls">
+<span id="boulangerie-urls-module"></span><h2>boulangerie.urls module<a class="headerlink" href="#module-boulangerie.urls" title="Permalink to this heading"></a></h2>
+<p>boulangerie URL Configuration</p>
+<dl class="simple">
+<dt>The <cite>urlpatterns</cite> list routes URLs to views. For more information please see:</dt><dd><p><a class="reference external" href="https://docs.djangoproject.com/en/4.0/topics/http/urls/">https://docs.djangoproject.com/en/4.0/topics/http/urls/</a></p>
+</dd>
+</dl>
+<p>Examples:
+Function views</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Add an import:  from my_app import views</p></li>
+<li><p>Add a URL to urlpatterns:  path(‘’, views.home, name=’home’)</p></li>
+</ol>
+</div></blockquote>
+<dl class="simple">
+<dt>Class-based views</dt><dd><ol class="arabic simple">
+<li><p>Add an import:  from other_app.views import Home</p></li>
+<li><p>Add a URL to urlpatterns:  path(‘’, Home.as_view(), name=’home’)</p></li>
+</ol>
+</dd>
+<dt>Including another URLconf</dt><dd><ol class="arabic simple">
+<li><p>Import the include() function: from django.urls import include, path</p></li>
+<li><p>Add a URL to urlpatterns:  path(‘blog/’, include(‘blog.urls’))</p></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="module-boulangerie.views">
+<span id="boulangerie-views-module"></span><h2>boulangerie.views module<a class="headerlink" href="#module-boulangerie.views" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.command">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.command" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>_type_</em>) – request</p></li>
+<li><p><strong>reg</strong> (<em>_type_</em>) – _description_</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.confirmationorder">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">confirmationorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.confirmationorder" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.dateorder">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">dateorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.dateorder" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.home">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.home" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.my">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">my</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.my" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.mycart">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">mycart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.mycart" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.product">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.product" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.product_category">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">product_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_category</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.product_category" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_
+:param request: _description_
+:type request: _type_
+:param product_category: _description_
+:type product_category: _type_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.product_description">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">product_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">product_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.product_description" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.rangedef">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">rangedef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.rangedef" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="boulangerie.views.recapitulatif">
+<span class="sig-prename descclassname"><span class="pre">boulangerie.views.</span></span><span class="sig-name descname"><span class="pre">recapitulatif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.views.recapitulatif" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-boulangerie.wsgi">
+<span id="boulangerie-wsgi-module"></span><h2>boulangerie.wsgi module<a class="headerlink" href="#module-boulangerie.wsgi" title="Permalink to this heading"></a></h2>
+<p>WSGI config for boulangerie project.</p>
+<p>It exposes the WSGI callable as a module-level variable named <code class="docutils literal notranslate"><span class="pre">application</span></code>.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/">https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/</a></p>
+</section>
+<section id="module-boulangerie">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-boulangerie" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Greg.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

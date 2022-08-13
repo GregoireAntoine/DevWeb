@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>boulangerie.migrations package &mdash; Doratiotto 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Doratiotto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">boulangerie.migrations package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0001_initial">boulangerie.migrations.0001_initial module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0002_product_prix_product_prix_currency_and_more">boulangerie.migrations.0002_product_prix_product_prix_currency_and_more module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0003_productcategory_product_product_category_id">boulangerie.migrations.0003_productcategory_product_product_category_id module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0004_product_image">boulangerie.migrations.0004_product_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0005_command">boulangerie.migrations.0005_command module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix">boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0007_alter_product_image">boulangerie.migrations.0007_alter_product_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0008_alter_product_image">boulangerie.migrations.0008_alter_product_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0009_alter_product_image">boulangerie.migrations.0009_alter_product_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0010_order">boulangerie.migrations.0010_order module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0011_ordertest">boulangerie.migrations.0011_ordertest module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more">boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0013_order_customer">boulangerie.migrations.0013_order_customer module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0014_alter_order_customer_userid">boulangerie.migrations.0014_alter_order_customer_userid module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more">boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more">boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0017_remove_listorder_product_category_id">boulangerie.migrations.0017_remove_listorder_product_category_id module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0018_listorder_image">boulangerie.migrations.0018_listorder_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0019_alter_listorder_image">boulangerie.migrations.0019_alter_listorder_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0020_order_orderline_delete_listorder_and_more">boulangerie.migrations.0020_order_orderline_delete_listorder_and_more module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0021_bestsell">boulangerie.migrations.0021_bestsell module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0022_delete_bestsell">boulangerie.migrations.0022_delete_bestsell module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0023_bestsell">boulangerie.migrations.0023_bestsell module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0024_bestsell_quantity">boulangerie.migrations.0024_bestsell_quantity module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0025_alter_bestsell_product_id">boulangerie.migrations.0025_alter_bestsell_product_id module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0026_alter_bestsell_product_id">boulangerie.migrations.0026_alter_bestsell_product_id module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0027_bestsell_image">boulangerie.migrations.0027_bestsell_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0028_remove_bestsell_image">boulangerie.migrations.0028_remove_bestsell_image module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0029_product_count_sold">boulangerie.migrations.0029_product_count_sold module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0030_product_available_on_website">boulangerie.migrations.0030_product_available_on_website module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0031_productcategory_available_on_website">boulangerie.migrations.0031_productcategory_available_on_website module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations.0032_alter_product_options">boulangerie.migrations.0032_alter_product_options module</a></li>
+<li><a class="reference internal" href="#module-boulangerie.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Doratiotto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>boulangerie.migrations package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/boulangerie.migrations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="boulangerie-migrations-package">
+<h1>boulangerie.migrations package<a class="headerlink" href="#boulangerie-migrations-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-boulangerie.migrations.0001_initial">
+<span id="boulangerie-migrations-0001-initial-module"></span><h2>boulangerie.migrations.0001_initial module<a class="headerlink" href="#module-boulangerie.migrations.0001_initial" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0001_initial.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#boulangerie.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#boulangerie.migrations.0001_initial.Migration.initial" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Product',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0001_initial.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0002_product_prix_product_prix_currency_and_more">
+<span id="boulangerie-migrations-0002-product-prix-product-prix-currency-and-more-module"></span><h2>boulangerie.migrations.0002_product_prix_product_prix_currency_and_more module<a class="headerlink" href="#module-boulangerie.migrations.0002_product_prix_product_prix_currency_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='prix',</span> <span class="pre">field=&lt;djmoney.models.fields.MoneyField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='prix_currency',</span> <span class="pre">field=&lt;djmoney.models.fields.CurrencyField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='name',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0002_product_prix_product_prix_currency_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0003_productcategory_product_product_category_id">
+<span id="boulangerie-migrations-0003-productcategory-product-product-category-id-module"></span><h2>boulangerie.migrations.0003_productcategory_product_product_category_id module<a class="headerlink" href="#module-boulangerie.migrations.0003_productcategory_product_product_category_id" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0003_productcategory_product_product_category_id.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0003_productcategory_product_product_category_id.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0003_productcategory_product_product_category_id.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0003_productcategory_product_product_category_id.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0002_product_prix_product_prix_currency_and_more')]</span></em><a class="headerlink" href="#boulangerie.migrations.0003_productcategory_product_product_category_id.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0003_productcategory_product_product_category_id.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='ProductCategory',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='product_category_id',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0003_productcategory_product_product_category_id.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0004_product_image">
+<span id="boulangerie-migrations-0004-product-image-module"></span><h2>boulangerie.migrations.0004_product_image module<a class="headerlink" href="#module-boulangerie.migrations.0004_product_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0004_product_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0004_product_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0004_product_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0004_product_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0003_productcategory_product_product_category_id')]</span></em><a class="headerlink" href="#boulangerie.migrations.0004_product_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0004_product_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.files.ImageField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0004_product_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0005_command">
+<span id="boulangerie-migrations-0005-command-module"></span><h2>boulangerie.migrations.0005_command module<a class="headerlink" href="#module-boulangerie.migrations.0005_command" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0005_command.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0005_command.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0005_command.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0005_command.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0004_product_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0005_command.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0005_command.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Command',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('username',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('product',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0005_command.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix">
+<span id="boulangerie-migrations-0006-product-price-alter-product-image-alter-product-prix-module"></span><h2>boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix module<a class="headerlink" href="#module-boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0005_command')]</span></em><a class="headerlink" href="#boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='price',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.files.ImageField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='prix',</span> <span class="pre">field=&lt;djmoney.models.fields.MoneyField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0006_product_price_alter_product_image_alter_product_prix.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0007_alter_product_image">
+<span id="boulangerie-migrations-0007-alter-product-image-module"></span><h2>boulangerie.migrations.0007_alter_product_image module<a class="headerlink" href="#module-boulangerie.migrations.0007_alter_product_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0007_alter_product_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0007_alter_product_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0007_alter_product_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0007_alter_product_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0006_product_price_alter_product_image_alter_product_prix')]</span></em><a class="headerlink" href="#boulangerie.migrations.0007_alter_product_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0007_alter_product_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.files.ImageField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0007_alter_product_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0008_alter_product_image">
+<span id="boulangerie-migrations-0008-alter-product-image-module"></span><h2>boulangerie.migrations.0008_alter_product_image module<a class="headerlink" href="#module-boulangerie.migrations.0008_alter_product_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0008_alter_product_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0008_alter_product_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0008_alter_product_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0008_alter_product_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0007_alter_product_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0008_alter_product_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0008_alter_product_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.files.ImageField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0008_alter_product_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0009_alter_product_image">
+<span id="boulangerie-migrations-0009-alter-product-image-module"></span><h2>boulangerie.migrations.0009_alter_product_image module<a class="headerlink" href="#module-boulangerie.migrations.0009_alter_product_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0009_alter_product_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0009_alter_product_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0009_alter_product_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0009_alter_product_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0008_alter_product_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0009_alter_product_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0009_alter_product_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.files.ImageField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0009_alter_product_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0010_order">
+<span id="boulangerie-migrations-0010-order-module"></span><h2>boulangerie.migrations.0010_order module<a class="headerlink" href="#module-boulangerie.migrations.0010_order" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0010_order.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0010_order.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0010_order.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0010_order.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0009_alter_product_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0010_order.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0010_order.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Order',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('customername',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Totalprice',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('productname',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('product_category_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0010_order.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0011_ordertest">
+<span id="boulangerie-migrations-0011-ordertest-module"></span><h2>boulangerie.migrations.0011_ordertest module<a class="headerlink" href="#module-boulangerie.migrations.0011_ordertest" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0011_ordertest.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0011_ordertest.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0011_ordertest.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0011_ordertest.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0010_order')]</span></em><a class="headerlink" href="#boulangerie.migrations.0011_ordertest.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0011_ordertest.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='ordertest',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('username',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('product',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0011_ordertest.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more">
+<span id="boulangerie-migrations-0012-delete-ordertest-remove-order-customername-and-more-module"></span><h2>boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more module<a class="headerlink" href="#module-boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0011_ordertest')]</span></em><a class="headerlink" href="#boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DeleteModel</span>&#160; <span class="pre">name='ordertest'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='order',</span> <span class="pre">name='customername'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='order',</span> <span class="pre">name='userid',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0012_delete_ordertest_remove_order_customername_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0013_order_customer">
+<span id="boulangerie-migrations-0013-order-customer-module"></span><h2>boulangerie.migrations.0013_order_customer module<a class="headerlink" href="#module-boulangerie.migrations.0013_order_customer" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0013_order_customer.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0013_order_customer.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0013_order_customer.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0013_order_customer.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0012_delete_ordertest_remove_order_customername_and_more')]</span></em><a class="headerlink" href="#boulangerie.migrations.0013_order_customer.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0013_order_customer.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Order_customer',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('userid',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Totalprice',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('productname',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('product_category_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0013_order_customer.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0014_alter_order_customer_userid">
+<span id="boulangerie-migrations-0014-alter-order-customer-userid-module"></span><h2>boulangerie.migrations.0014_alter_order_customer_userid module<a class="headerlink" href="#module-boulangerie.migrations.0014_alter_order_customer_userid" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0014_alter_order_customer_userid.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0014_alter_order_customer_userid.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0014_alter_order_customer_userid.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0014_alter_order_customer_userid.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0013_order_customer')]</span></em><a class="headerlink" href="#boulangerie.migrations.0014_alter_order_customer_userid.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0014_alter_order_customer_userid.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='order_customer',</span> <span class="pre">name='userid',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0014_alter_order_customer_userid.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more">
+<span id="boulangerie-migrations-0015-customer-order-list-order-delete-command-and-more-module"></span><h2>boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more module<a class="headerlink" href="#module-boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0014_alter_order_customer_userid')]</span></em><a class="headerlink" href="#boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='customer_Order',</span> <span class="pre">fields=[('userid',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('total_price',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('date_order',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('date',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('order_id',</span> <span class="pre">&lt;django.db.models.fields.AutoField&gt;),</span> <span class="pre">('total_quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='List_Order',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('userid',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('price',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('productname',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('product_category_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='Command'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='order_customer',</span> <span class="pre">name='product_category_id'&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='Order'&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='Order_customer'&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0015_customer_order_list_order_delete_command_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more">
+<span id="boulangerie-migrations-0016-listorder-order-customer-delete-customer-order-and-more-module"></span><h2>boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more module<a class="headerlink" href="#module-boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0015_customer_order_list_order_delete_command_and_more')]</span></em><a class="headerlink" href="#boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='ListOrder',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('order_id',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('userid',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('price',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('productname',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('product_category_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Order_customer',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('userid',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('total_price',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('date_order',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('date',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('order_id',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('total_quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;)]&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='customer_Order'&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='List_Order'&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0016_listorder_order_customer_delete_customer_order_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0017_remove_listorder_product_category_id">
+<span id="boulangerie-migrations-0017-remove-listorder-product-category-id-module"></span><h2>boulangerie.migrations.0017_remove_listorder_product_category_id module<a class="headerlink" href="#module-boulangerie.migrations.0017_remove_listorder_product_category_id" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0017_remove_listorder_product_category_id.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0017_remove_listorder_product_category_id.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0017_remove_listorder_product_category_id.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0017_remove_listorder_product_category_id.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0016_listorder_order_customer_delete_customer_order_and_more')]</span></em><a class="headerlink" href="#boulangerie.migrations.0017_remove_listorder_product_category_id.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0017_remove_listorder_product_category_id.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='listorder',</span> <span class="pre">name='product_category_id'&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0017_remove_listorder_product_category_id.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0018_listorder_image">
+<span id="boulangerie-migrations-0018-listorder-image-module"></span><h2>boulangerie.migrations.0018_listorder_image module<a class="headerlink" href="#module-boulangerie.migrations.0018_listorder_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0018_listorder_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0018_listorder_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0018_listorder_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0018_listorder_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0017_remove_listorder_product_category_id')]</span></em><a class="headerlink" href="#boulangerie.migrations.0018_listorder_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0018_listorder_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='listorder',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0018_listorder_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0019_alter_listorder_image">
+<span id="boulangerie-migrations-0019-alter-listorder-image-module"></span><h2>boulangerie.migrations.0019_alter_listorder_image module<a class="headerlink" href="#module-boulangerie.migrations.0019_alter_listorder_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0019_alter_listorder_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0019_alter_listorder_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0019_alter_listorder_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0019_alter_listorder_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0018_listorder_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0019_alter_listorder_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0019_alter_listorder_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='listorder',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0019_alter_listorder_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0020_order_orderline_delete_listorder_and_more">
+<span id="boulangerie-migrations-0020-order-orderline-delete-listorder-and-more-module"></span><h2>boulangerie.migrations.0020_order_orderline_delete_listorder_and_more module<a class="headerlink" href="#module-boulangerie.migrations.0020_order_orderline_delete_listorder_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('boulangerie',</span> <span class="pre">'0019_alter_listorder_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Order',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('ref',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('date_order',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('date_takeaway',</span> <span class="pre">&lt;django.db.models.fields.DateField&gt;),</span> <span class="pre">('total_quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('total_price',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('user_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='OrderLine',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('price',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('image',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('order_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;),</span> <span class="pre">('product_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='ListOrder'&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='Order_customer'&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0020_order_orderline_delete_listorder_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0021_bestsell">
+<span id="boulangerie-migrations-0021-bestsell-module"></span><h2>boulangerie.migrations.0021_bestsell module<a class="headerlink" href="#module-boulangerie.migrations.0021_bestsell" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0021_bestsell.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0021_bestsell.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0021_bestsell.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0021_bestsell.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0020_order_orderline_delete_listorder_and_more')]</span></em><a class="headerlink" href="#boulangerie.migrations.0021_bestsell.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0021_bestsell.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='BestSell',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('quantity',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('product_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0021_bestsell.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0022_delete_bestsell">
+<span id="boulangerie-migrations-0022-delete-bestsell-module"></span><h2>boulangerie.migrations.0022_delete_bestsell module<a class="headerlink" href="#module-boulangerie.migrations.0022_delete_bestsell" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0022_delete_bestsell.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0022_delete_bestsell.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0022_delete_bestsell.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0022_delete_bestsell.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0021_bestsell')]</span></em><a class="headerlink" href="#boulangerie.migrations.0022_delete_bestsell.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0022_delete_bestsell.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;DeleteModel</span>&#160; <span class="pre">name='BestSell'&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0022_delete_bestsell.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0023_bestsell">
+<span id="boulangerie-migrations-0023-bestsell-module"></span><h2>boulangerie.migrations.0023_bestsell module<a class="headerlink" href="#module-boulangerie.migrations.0023_bestsell" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0023_bestsell.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0023_bestsell.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0023_bestsell.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0023_bestsell.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0022_delete_bestsell')]</span></em><a class="headerlink" href="#boulangerie.migrations.0023_bestsell.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0023_bestsell.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='BestSell',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('product_id',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0023_bestsell.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0024_bestsell_quantity">
+<span id="boulangerie-migrations-0024-bestsell-quantity-module"></span><h2>boulangerie.migrations.0024_bestsell_quantity module<a class="headerlink" href="#module-boulangerie.migrations.0024_bestsell_quantity" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0024_bestsell_quantity.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0024_bestsell_quantity.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0024_bestsell_quantity.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0024_bestsell_quantity.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0023_bestsell')]</span></em><a class="headerlink" href="#boulangerie.migrations.0024_bestsell_quantity.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0024_bestsell_quantity.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='bestsell',</span> <span class="pre">name='quantity',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0024_bestsell_quantity.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0025_alter_bestsell_product_id">
+<span id="boulangerie-migrations-0025-alter-bestsell-product-id-module"></span><h2>boulangerie.migrations.0025_alter_bestsell_product_id module<a class="headerlink" href="#module-boulangerie.migrations.0025_alter_bestsell_product_id" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0025_alter_bestsell_product_id.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0025_alter_bestsell_product_id.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0025_alter_bestsell_product_id.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0025_alter_bestsell_product_id.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0024_bestsell_quantity')]</span></em><a class="headerlink" href="#boulangerie.migrations.0025_alter_bestsell_product_id.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0025_alter_bestsell_product_id.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='bestsell',</span> <span class="pre">name='product_id',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0025_alter_bestsell_product_id.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0026_alter_bestsell_product_id">
+<span id="boulangerie-migrations-0026-alter-bestsell-product-id-module"></span><h2>boulangerie.migrations.0026_alter_bestsell_product_id module<a class="headerlink" href="#module-boulangerie.migrations.0026_alter_bestsell_product_id" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0026_alter_bestsell_product_id.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0026_alter_bestsell_product_id.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0026_alter_bestsell_product_id.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0026_alter_bestsell_product_id.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0025_alter_bestsell_product_id')]</span></em><a class="headerlink" href="#boulangerie.migrations.0026_alter_bestsell_product_id.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0026_alter_bestsell_product_id.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='bestsell',</span> <span class="pre">name='product_id',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0026_alter_bestsell_product_id.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0027_bestsell_image">
+<span id="boulangerie-migrations-0027-bestsell-image-module"></span><h2>boulangerie.migrations.0027_bestsell_image module<a class="headerlink" href="#module-boulangerie.migrations.0027_bestsell_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0027_bestsell_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0027_bestsell_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0027_bestsell_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0027_bestsell_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0026_alter_bestsell_product_id')]</span></em><a class="headerlink" href="#boulangerie.migrations.0027_bestsell_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0027_bestsell_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='bestsell',</span> <span class="pre">name='image',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0027_bestsell_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0028_remove_bestsell_image">
+<span id="boulangerie-migrations-0028-remove-bestsell-image-module"></span><h2>boulangerie.migrations.0028_remove_bestsell_image module<a class="headerlink" href="#module-boulangerie.migrations.0028_remove_bestsell_image" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0028_remove_bestsell_image.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0028_remove_bestsell_image.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0028_remove_bestsell_image.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0028_remove_bestsell_image.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0027_bestsell_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0028_remove_bestsell_image.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0028_remove_bestsell_image.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='bestsell',</span> <span class="pre">name='image'&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0028_remove_bestsell_image.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0029_product_count_sold">
+<span id="boulangerie-migrations-0029-product-count-sold-module"></span><h2>boulangerie.migrations.0029_product_count_sold module<a class="headerlink" href="#module-boulangerie.migrations.0029_product_count_sold" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0029_product_count_sold.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0029_product_count_sold.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0029_product_count_sold.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0029_product_count_sold.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0028_remove_bestsell_image')]</span></em><a class="headerlink" href="#boulangerie.migrations.0029_product_count_sold.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0029_product_count_sold.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='count_sold',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0029_product_count_sold.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0030_product_available_on_website">
+<span id="boulangerie-migrations-0030-product-available-on-website-module"></span><h2>boulangerie.migrations.0030_product_available_on_website module<a class="headerlink" href="#module-boulangerie.migrations.0030_product_available_on_website" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0030_product_available_on_website.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0030_product_available_on_website.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0030_product_available_on_website.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0030_product_available_on_website.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0029_product_count_sold')]</span></em><a class="headerlink" href="#boulangerie.migrations.0030_product_available_on_website.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0030_product_available_on_website.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='product',</span> <span class="pre">name='available_on_website',</span> <span class="pre">field=&lt;django.db.models.fields.BooleanField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0030_product_available_on_website.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0031_productcategory_available_on_website">
+<span id="boulangerie-migrations-0031-productcategory-available-on-website-module"></span><h2>boulangerie.migrations.0031_productcategory_available_on_website module<a class="headerlink" href="#module-boulangerie.migrations.0031_productcategory_available_on_website" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0031_productcategory_available_on_website.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0031_productcategory_available_on_website.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0031_productcategory_available_on_website.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0031_productcategory_available_on_website.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0030_product_available_on_website')]</span></em><a class="headerlink" href="#boulangerie.migrations.0031_productcategory_available_on_website.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0031_productcategory_available_on_website.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='productcategory',</span> <span class="pre">name='available_on_website',</span> <span class="pre">field=&lt;django.db.models.fields.BooleanField&gt;&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0031_productcategory_available_on_website.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations.0032_alter_product_options">
+<span id="boulangerie-migrations-0032-alter-product-options-module"></span><h2>boulangerie.migrations.0032_alter_product_options module<a class="headerlink" href="#module-boulangerie.migrations.0032_alter_product_options" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="boulangerie.migrations.0032_alter_product_options.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">boulangerie.migrations.0032_alter_product_options.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boulangerie.migrations.0032_alter_product_options.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0032_alter_product_options.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('boulangerie',</span> <span class="pre">'0031_productcategory_available_on_website')]</span></em><a class="headerlink" href="#boulangerie.migrations.0032_alter_product_options.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="boulangerie.migrations.0032_alter_product_options.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterModelOptions</span>&#160; <span class="pre">name='product',</span> <span class="pre">options={'ordering':</span> <span class="pre">['name']}&gt;]</span></em><a class="headerlink" href="#boulangerie.migrations.0032_alter_product_options.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-boulangerie.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-boulangerie.migrations" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Greg.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
