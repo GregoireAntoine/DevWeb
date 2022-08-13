@@ -160,3 +160,10 @@ def sent_message(subject, message):
         recipient_list=["doratiottoboulangerie@gmail.com"],
         fail_silently=True,
     )
+
+
+class BestSellerAPIView(APIView):
+    def get(self, *args, **kwargs):
+        product = Product.objects.all().order_by("-count_sold")[:3]
+        serializer = ProductSerializer(product, many=True)
+        return Response(serializer.data)
