@@ -24,6 +24,7 @@ from .views import (
     OrderLineAPIView,
     OrderConfirmAPIView,
     MyCommandAPIView,
+    MessageAPIView,
 )
 
 urlpatterns = [
@@ -34,4 +35,5 @@ urlpatterns = [
     path("api/order", OrderAPIView.as_view()),
     path("api/orderline", OrderLineAPIView.as_view()),
     path("api/mycommand", MyCommandAPIView.as_view()),
+    path("api/message", MessageAPIView.as_view()),
 ]
