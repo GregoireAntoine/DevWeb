@@ -25,8 +25,16 @@ export class HomeComponent implements OnInit {
   selectedOption : number =1;
   api_link : string='http://127.0.0.1:8000/api';
   productdata : string=''
-
-
+  nmbr_article(){
+    var nombre=0;
+    while(nombre<51){
+      this.compteur[nombre]=nombre
+      nombre=nombre+1
+    }
+  }
+  counter(i: number) {
+    return new Array(i);
+}
   constructor(private http:HttpClient , private cartService : CartService, private formBuilder: FormBuilder) {
 
   }
@@ -56,9 +64,30 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    const httpOptions = {
 
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa('gregoire:antoine21')
+      })
+    };
+    this.http.get('http://127.0.0.1:8000/api/bestsellers',httpOptions)
+    .subscribe(Response => {
+      this.product=Response;
+      this.quantity_number= new Array(50)
+
+    });
 
   }
+
+  addtocart(item: any ,quantity: number){
+
+    this.cartService.addtoCart(item,quantity);
+    this.selectedOption=1
+  }
+
+
+
 
 
 
