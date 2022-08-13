@@ -46,7 +46,7 @@ admin.site.register(Order, OrderAdmin)
 
 
 class OrderLineAdmin(admin.ModelAdmin):
-    list_display = ["order_id", "product_id", "price", "quantity", "image"]
+    list_display = ["order_id", "product_id", "price", "quantity"]
 
 
 admin.site.register(OrderLine, OrderLineAdmin)
