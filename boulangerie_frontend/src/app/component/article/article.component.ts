@@ -42,7 +42,7 @@ export class ArticleComponent implements OnInit {
 
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa('gregoire:antoine21')
+        'Authorization': 'Basic Z3JlZ29pcmU6YW50b2luZTIx'
       })
     };
     this.http.get('http://127.0.0.1:8000/api/product',httpOptions) //http://www.mocky.io/v2/5ea172973100002d001eeada

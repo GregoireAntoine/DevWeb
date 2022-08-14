@@ -41,7 +41,7 @@ export class ArticleCategoryComponent implements OnInit {
 
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa('gregoire:antoine21')
+        'Authorization': 'Basic Z3JlZ29pcmU6YW50b2luZTIx'
       })
     };
 
