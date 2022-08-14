@@ -3,7 +3,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { DatePipe } from '@angular/common'
 import { TimelineItem } from 'ngx-horizontal-timeline';
 import { Router } from '@angular/router';
-
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-dateorder',
