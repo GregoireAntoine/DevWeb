@@ -13,29 +13,51 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-from django.urls import path, include
-from django.conf import settings
+from atexit import register
+from itertools import product
 from django.contrib import admin
+from django.urls import path, include
+from django.views.generic import TemplateView
+from . import views
+from django.contrib.auth.views import LogoutView
+from django.conf.urls.static import static
+from django.conf import settings
 from .views import (
-    ProductAPIView,
     ProductCategoryAPIView,
+    ProductAPIView,
     OrderAPIView,
     OrderLineAPIView,
-    OrderConfirmAPIView,
-    MyCommandAPIView,
-    MessageAPIView,
+    LoginView,
+    RegisterAPIView,
+    AccountAPIView,
     BestSellerAPIView,
+    OrderConfirmAPIView,
+    ProductFilterAPIView,
+    MessageAPIView,
+    MyCommandAPIView,
+    DeletePostViewSet,
+)
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
 )
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/product", ProductAPIView.as_view()),
+    path("api-auth/", include("rest_framework.urls")),
     path("api/productcategory", ProductCategoryAPIView.as_view()),
-    path("api/orderconfirm", OrderConfirmAPIView.as_view()),
-    path("api/order", OrderAPIView.as_view()),
-    path("api/orderline", OrderLineAPIView.as_view()),
-    path("api/mycommand", MyCommandAPIView.as_view()),
+    path("api/product", ProductAPIView.as_view()),
     path("api/message", MessageAPIView.as_view()),
+    path("api/productfiltercategory", ProductFilterAPIView.as_view()),
+    path("api/orderconfirm", OrderConfirmAPIView.as_view()),
     path("api/bestsellers", BestSellerAPIView.as_view()),
-]
+    path("api/order", OrderAPIView.as_view()),
+    path("api/mycommand", MyCommandAPIView.as_view()),
+    path("api/orderline", OrderLineAPIView.as_view()),
+    path("api/login", LoginView.as_view()),
+    path("api/delete/<int:pk>/", DeletePostViewSet.as_view()),
+    path("api/register", RegisterAPIView.as_view()),
+    path("api/myaccount", AccountAPIView.as_view()),
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
