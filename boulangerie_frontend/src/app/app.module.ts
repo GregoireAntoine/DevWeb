@@ -10,25 +10,29 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './component/home/home.component';
 import { CartComponent } from './component/cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { HeaderComponent } from './component/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateorderComponent } from './component/dateorder/dateorder.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { CheckoutComponent } from './component/checkout/checkout.component';
-
+import {DatePipe} from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { NgxHorizontalTimelineModule } from 'ngx-horizontal-timeline';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
 import { OrderConfirmComponent } from './component/order-confirm/order-confirm.component';
 import { ArticleCategoryComponent } from './component/article-category/article-category.component';
 import { MycommandComponent } from './component/mycommand/mycommand.component';
-
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
 
 @NgModule({
 
@@ -36,14 +40,20 @@ import { MycommandComponent } from './component/mycommand/mycommand.component';
     AppComponent,
     ArticleComponent,
     HomeComponent,
-    ArticleCategoryComponent,
     CartComponent,
+    HeaderComponent,
     DateorderComponent,
     CheckoutComponent,
+    LoginComponent,
+    RegisterComponent,
     OrderConfirmComponent,
+    ArticleCategoryComponent,
     MycommandComponent,
-   ],
+
+
+  ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     NgbModule,
@@ -61,7 +71,7 @@ import { MycommandComponent } from './component/mycommand/mycommand.component';
     NgxHorizontalTimelineModule,
     FontAwesomeModule
   ],
-
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
