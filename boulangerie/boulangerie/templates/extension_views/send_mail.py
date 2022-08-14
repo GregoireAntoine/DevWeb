@@ -18,7 +18,7 @@ from boulangerie.templates.extension_views.view_cart_action import (
 ### enfin on cide le cart du client.
 
 
-def sent_order(order, lst, user):
+def sent_order(order, lst, user, email):
 
     send_mail(
         subject=f"Votre commande numéro {order['order'][0]['ref']} a bien été enregistrée",
@@ -58,6 +58,6 @@ def sent_order(order, lst, user):
     
                         Merci pour votre confiance</div></body>""",
         from_email="no-reply@doratiotto.com",
-        recipient_list=["gregoireantoine21@gmail.com"],
+        recipient_list=[email],
         fail_silently=True,
     )
