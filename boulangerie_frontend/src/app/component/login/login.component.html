@@ -1,0 +1,85 @@
+
+
+
+
+
+
+
+
+<div *ngIf="userlogin == '' ">
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+
+        <div  class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Se connecter avec : </p>
+            <a type="button" href=" provider_login_url 'google' " class="btn btn-primary btn-floating mx-1">
+              <i class="fab fa-google"></i><br><br>
+            </a>
+
+          </div>
+           <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+            <label>Nom d'utilisateur</label><br>
+    <input type="text" formControlName="username"><br><br>
+    <label>Mot de passe</label><br>
+    <input type="text" formControlName="password"><br><br>
+    <button type="submit" class="btn btn-primary">login</button>
+</form>
+  <br>
+        <a style="float:left" href="/register">s'inscrire</a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+
+
+
+
+        <div  *ngIf="userlogin != '' ">
+<h2>Votre compte :</h2>
+          <button  class="btn btn-primary"  id="deconnexion" (click)="deconnection()">se déconnecter</button>
+          <table *ngFor="let cat of data;" style="width:70%;margin-top:5rem;"class="table table-bordered">
+            <thead>
+              <tr class="table-primary">
+                <th scope="col">ref : {{cat.order.ref}}</th>
+                <th scope="col">Passé le : {{cat.order.date_order}}</th>
+                <th scope="col">Prévu le : {{cat.order.date_takeaway}}</th>
+
+                <th scope="col" class="text-center"> <button id="poubelle" (click)="deletefunction(cat.order.id)" ><fa-icon [icon]="faRibbon"></fa-icon></button></th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let product of cat.orderline;" >
+
+                <td class="text-center">{{product.name}}</td>
+               <td class="text-center" >{{product.quantity}}</td>
+               <td class="text-center">{{product.price}} €</td>
+              </tr>
+          <tr>
+            <th scope="col"></th>
+                <th scope="col">Quantité : {{cat.order.total_quantity}}</th>
+                <th scope="col">Total : {{cat.order.total_price | number : '1.2-2'}} €</th>
+
+                <th scope="col"></th>
+          </tr>
+            </tbody>
+          </table>
+
+          <br><br>
+
+
+        </div>
+
