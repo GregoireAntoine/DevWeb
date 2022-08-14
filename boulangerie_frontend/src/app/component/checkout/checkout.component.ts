@@ -21,14 +21,18 @@ export class CheckoutComponent implements OnInit {
   public donneeline : any;
   public tab: any = [];
   public array_order: any = {};
+  user:any;
   constructor(private cartService : CartService,private http:HttpClient) { }
 
+
   ngOnInit(): void {
+    this.user=localStorage.getItem('user')
     this.items.push({
       label: 'Panier',
       icon: 'fa fa-address-book-o',
       title: 'Votre panier',
       color: '16a085',
+
       command() {
 
       }
