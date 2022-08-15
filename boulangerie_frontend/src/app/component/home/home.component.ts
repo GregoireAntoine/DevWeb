@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     subject: '',
     message: ''
   });
-
+  user:any;
   product:any;
   products: any[]  = [];
   compteur: any[]  = [];
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.user=localStorage.getItem("user")
     const httpOptions = {
 
       headers: new HttpHeaders({
