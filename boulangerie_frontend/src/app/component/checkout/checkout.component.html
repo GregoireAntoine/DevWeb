@@ -22,7 +22,7 @@
                         <tr *ngFor="let item of products; let i = index">
 
                             <td>{{item.name}}</td>
-                            <td><img style="width: 120px;" src="http://127.0.0.1:8000{{item.image}}" alt=""></td>
+                            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
 
                             <th style="width: 12%;">{{item.price}} €</th>
                             <td style="width: 12%;">{{item.quantity}}</td>

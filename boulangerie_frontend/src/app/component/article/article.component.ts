@@ -21,6 +21,7 @@ export class ArticleComponent implements OnInit {
   selectedOption : number =1;
   api_link : string='http://127.0.0.1:8000/api';
   productdata : string=''
+  user:any;
   nmbr_article(){
     var nombre=0;
     while(nombre<51){
@@ -37,7 +38,7 @@ export class ArticleComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.user=localStorage.getItem("user")
     const httpOptions = {
 
       headers: new HttpHeaders({

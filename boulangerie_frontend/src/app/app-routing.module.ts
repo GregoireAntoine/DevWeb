@@ -11,7 +11,7 @@ import { OrderConfirmComponent } from './component/order-confirm/order-confirm.c
 import { ArticleCategoryComponent } from './component/article-category/article-category.component'
 import { MycommandComponent } from './component/mycommand/mycommand.component';
 const routes: Routes = [
-  {path:'', redirectTo:'products',pathMatch:'full'},
+  {path:'', redirectTo:'home',pathMatch:'full'},
   {path:'home', component: HomeComponent},
   {path:'products', component: ArticleComponent},
   {path:'cart', component: CartComponent},

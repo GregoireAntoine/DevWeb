@@ -20,6 +20,7 @@ export class ArticleCategoryComponent implements OnInit {
   api_link : string='http://127.0.0.1:8000/api';
   productdata : string=''
   a:any;
+  user:any;
   nmbr_article(){
     var nombre=0;
     while(nombre<51){
@@ -36,7 +37,7 @@ export class ArticleCategoryComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.user=localStorage.getItem("user")
     const httpOptions = {
 
       headers: new HttpHeaders({
