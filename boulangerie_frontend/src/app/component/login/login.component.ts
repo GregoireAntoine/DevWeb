@@ -35,12 +35,15 @@ export class LoginComponent implements OnInit {
 
     };
     this.userlogin = localStorage.getItem("user")
-    this.http.get("http://127.0.0.1:8000/api/mycommand",httpOptions)
-    .subscribe(Response => {
+    if(localStorage.getItem("user")!=""){
+      this.http.get("http://127.0.0.1:8000/api/mycommand",httpOptions)
+      .subscribe(Response => {
 
-    this.data=Response;
+      this.data=Response;
 
-    });
+      });
+    }
+
   }
   get f(){
     return this.myform.controls
