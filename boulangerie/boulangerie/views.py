@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+from itertools import product
 from operator import imod
 import pdb
 from turtle import update
@@ -33,6 +34,7 @@ from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework_simplejwt.tokens import AccessToken
 from django.core.mail import send_mail
 from boulangerie.templates.extension_views.send_mail import sent_order
+from rest_framework import generics
 
 
 def get_tokens_for_user(user):
@@ -50,12 +52,34 @@ class ProductCategoryAPIView(APIView):
         return Response(serializer.data)
 
 
-class ProductAPIView(APIView):
-    def get(self, *args, **kwargs):
-        product = Product.objects.filter(available_on_website=True)
+class ProductAPIView(generics.ListCreateAPIView):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
 
-        serializer = ProductSerializer(product, many=True)
-        return Response(serializer.data)
+    def get_queryset(self):
+        available_on_website = self.request.query_params.get(
+            "available_on_website", None
+        )
+        product_category_id = self.request.query_params.get("product_category_id", None)
+        if product_category_id:
+            if available_on_website:
+                product = Product.objects.filter(
+                    available_on_website=available_on_website,
+                    product_category_id=product_category_id,
+                )
+                return product
+            else:
+                product = Product.objects.filter(
+                    product_category_id=product_category_id
+                )
+            return product
+
+        elif available_on_website:
+            product = Product.objects.filter(available_on_website=available_on_website)
+            return product
+
+        else:
+            return super().get_queryset()
 
 
 class ProductFilterAPIView(APIView):

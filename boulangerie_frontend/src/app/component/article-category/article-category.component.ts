@@ -46,20 +46,10 @@ export class ArticleCategoryComponent implements OnInit {
     };
 
 
-    this.http.get('http://127.0.0.1:8000/api/product',httpOptions)
+    this.http.get('http://127.0.0.1:8000/api/product?available_on_website=True&product_category_id='+this.getData(),httpOptions)
     .subscribe(Response => {
+      console.log(Response)
       this.product=Response;
-      this.product2=[]
-      for (let compteur in Response){
-
-        if (this.product[compteur].product_category_id == this.getData()){
-          this.product2.push(this.product[compteur])
-
-        }
-      }
-
-
-
       this.quantity_number= new Array(50)
     });
 
