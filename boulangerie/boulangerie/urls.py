@@ -32,7 +32,7 @@ from .views import (
     AccountAPIView,
     BestSellerAPIView,
     OrderConfirmAPIView,
-    ProductFilterAPIView,
+
     MessageAPIView,
     MyCommandAPIView,
     DeletePostViewSet,
@@ -51,7 +51,6 @@ urlpatterns = [
     path("api/product/<int:pk>/", ProductAPIView.as_view()),
     path("product", ProductAPIView.as_view()),
     path("api/message", MessageAPIView.as_view()),
-    path("api/productfiltercategory", ProductFilterAPIView.as_view()),
     path("api/orderconfirm", OrderConfirmAPIView.as_view()),
     path("api/bestsellers", BestSellerAPIView.as_view()),
     path("api/order", OrderAPIView.as_view()),

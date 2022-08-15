@@ -125,12 +125,6 @@ class ProductAPIView(generics.ListCreateAPIView):
             return Response(serializer.data,status=status.HTTP_202_ACCEPTED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class ProductFilterAPIView(APIView):
-    def get(self, *args, **kwargs):
-        product = Product.objects.filter(available_on_website=True)
-
-        serializer = ProductSerializer(product, many=True)
-        return Response(serializer.data)
 
 
 class BestSellerAPIView(APIView):
