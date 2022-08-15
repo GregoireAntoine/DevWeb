@@ -35,7 +35,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 from django.core.mail import send_mail
 from boulangerie.templates.extension_views.send_mail import sent_order
 from rest_framework import generics
-
+import json
 
 def get_tokens_for_user(user):
     refresh = RefreshToken.for_user(user)
@@ -47,9 +47,31 @@ def get_tokens_for_user(user):
 
 class ProductCategoryAPIView(APIView):
     def get(self, *args, **kwargs):
-        productcategories = ProductCategory.objects.all()
+        productcategories = ProductCategory.objects.filter(available_on_website= True)
         serializer = ProductCategorySerializer(productcategories, many=True)
         return Response(serializer.data)
+
+    def post(self, request, pk, format=None):
+
+        serializer = ProductCategorySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+        return Response(status=status.HTTP_201_CREATED)
+
+    def delete(self, request,pk ,format=None):
+        snippet = ProductCategory.objects.filter(id=pk)
+        snippet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def put(self, request,pk, format=None):
+        
+        snippet = ProductCategory.objects.get(name=request.data['name'])
+        serializer = ProductCategorySerializer(snippet, data=request.data)
+       
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_202_ACCEPTED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ProductAPIView(generics.ListCreateAPIView):
@@ -81,6 +103,27 @@ class ProductAPIView(generics.ListCreateAPIView):
         else:
             return super().get_queryset()
 
+    def post(self, request,pk, format=None):
+
+        serializer = ProductSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+        return Response(status=status.HTTP_201_CREATED)
+
+    def delete(self, request,pk, format=None):
+        snippet = product.objects.filter(name=request.data['name'])
+        snippet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def put(self,pk, request,format=None):
+        
+        snippet = Product.objects.get(name=request.data['name'])
+        serializer = ProductSerializer(snippet, data=request.data)
+       
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_202_ACCEPTED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProductFilterAPIView(APIView):
     def get(self, *args, **kwargs):

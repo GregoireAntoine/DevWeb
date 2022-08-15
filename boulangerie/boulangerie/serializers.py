@@ -10,7 +10,10 @@ from django.contrib.auth import get_user_model, authenticate
 class ProductCategorySerializer(ModelSerializer):
     class Meta:
         model = ProductCategory
-        fields = ["id", "name", "available_on_website"]
+        fields = ["id", 
+        "name", 
+        "available_on_website",
+        ]
 
 
 class MessageSerializer(ModelSerializer):
