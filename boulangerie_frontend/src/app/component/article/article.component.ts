@@ -46,7 +46,7 @@ export class ArticleComponent implements OnInit {
         'Authorization': 'Basic Z3JlZ29pcmU6YW50b2luZTIx'
       })
     };
-    this.http.get('http://127.0.0.1:8000/api/product',httpOptions) //http://www.mocky.io/v2/5ea172973100002d001eeada
+    this.http.get('http://127.0.0.1:8000/api/product?available_on_website=True',httpOptions) //http://www.mocky.io/v2/5ea172973100002d001eeada
     .subscribe(Response => {
       this.product=Response;
       this.quantity_number= new Array(50)
