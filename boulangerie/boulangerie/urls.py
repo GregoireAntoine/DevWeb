@@ -47,6 +47,7 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),
     path("api/productcategory", ProductCategoryAPIView.as_view()),
     path("api/product", ProductAPIView.as_view()),
+    path("product", ProductAPIView.as_view()),
     path("api/message", MessageAPIView.as_view()),
     path("api/productfiltercategory", ProductFilterAPIView.as_view()),
     path("api/orderconfirm", OrderConfirmAPIView.as_view()),
