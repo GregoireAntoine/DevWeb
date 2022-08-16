@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./article-category.component.scss']
 })
 export class ArticleCategoryComponent implements OnInit {
+  // définition des variables
   product:any;
   product2:any[]  = [];
   category:any;
@@ -24,13 +25,8 @@ export class ArticleCategoryComponent implements OnInit {
   numeroproduit:any;
   idleplusgrand:any;
   endroitdata:number=0;
-  nmbr_article(){
-    var nombre=0;
-    while(nombre<51){
-      this.compteur[nombre]=nombre
-      nombre=nombre+1
-    }
-  }
+
+    // fonction retournant un array qui sera utilisé dans le select option de la page html Article
   counter(i: number) {
     return new Array(i);
 }
@@ -40,7 +36,7 @@ export class ArticleCategoryComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.user=localStorage.getItem("user")
+    // Information permettant la connexion à la base de donnée.
     const httpOptions = {
 
       headers: new HttpHeaders({
@@ -49,13 +45,14 @@ export class ArticleCategoryComponent implements OnInit {
       })
     };
 
-
+// requête de récupération des produits qui ont available_on_website =True et qui appartienne à la bonne catégory
     this.http.get('http://127.0.0.1:8000/api/product?available_on_website=True&product_category_id='+this.getData(),httpOptions)
     .subscribe(Response => {
       console.log(Response)
       this.product=Response;
       this.quantity_number= new Array(50)
 
+ // Fonction de récupération du plus grand id présent dans la réponse.
       this.idleplusgrand=0
       for(this.numeroproduit in this.product ){
         if (this.idleplusgrand<this.product[this.numeroproduit]['id']){
@@ -63,31 +60,33 @@ export class ArticleCategoryComponent implements OnInit {
         }
 
       }
-
+// Initialsiation d'un tableau de la taille valant l'id le plus grand plus 1 qui sera utilisé lors des select option dans la page article html
       while (this.endroitdata<this.idleplusgrand+1){
-        console.log( "salut")
+
         this.selectedOption[this.endroitdata]=1
         this.endroitdata+=1
       }
     });
-
+// Récupération des catégories de produits
     this.http.get('http://127.0.0.1:8000/api/productcategory',httpOptions)
     .subscribe(Response => {
       this.category=Response;
     });
 
   }
-
+  // Fonction d'ajout dans le panier
   addtocart(item: any ,quantity: number, product_id:any){
     this.cartService.addtoCart(item,quantity);
     this.selectedOption[product_id]=1
   }
 
+// Fonction permettant d'afficher les produits d'une catégorie spécifique sléctionnée.
   filter_product(category : any){
 
     sessionStorage.setItem('category', category);
     this.ngOnInit();
   }
+  // Fonction qui récupère la catégorie de produits séléctionnée et la renvoie
   getData(){
     return sessionStorage.getItem('category');
   }
