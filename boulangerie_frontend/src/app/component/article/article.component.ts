@@ -94,7 +94,7 @@ export class ArticleComponent implements OnInit {
     sessionStorage.setItem('category', category);
   }
 
-  // Fonction qui récupère la catégorie de produits séléctionnée et la renvoie
+  // Fonction qui récupère la catégorie de produits séléctionnée et la renco
   getData(){
     return sessionStorage.getItem('category');
   }
