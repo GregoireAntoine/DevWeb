@@ -53,8 +53,16 @@ export class HomeComponent implements OnInit {
     };
     // Process checkout data here
     console.log(JSON.stringify(this.messageform.value))
-    this.http.post('http://127.0.0.1:8000/api/message',JSON.stringify(this.messageform.value),httpOptions).subscribe()
-    //console.warn('Your order has been submitted', this.messageform.value.message);
+    this.http.post('http://127.0.0.1:8000/api/message',JSON.stringify(this.messageform.value),httpOptions).subscribe(
+      data => {
+
+        if (data){
+          alert("message envoyé")
+        }
+
+           // get the status as error.status
+        })
+
     this.messageform.reset();
   }
 
