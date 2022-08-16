@@ -17,6 +17,8 @@ export class OrderConfirmComponent implements OnInit {
   selectedOption : number =1;
   api_link : string='http://127.0.0.1:8000/api';
   productdata : string=''
+  orderorder:any;
+  orderorderline:any;
   nmbr_article(){
     var nombre=0;
     while(nombre<51){
@@ -83,7 +85,8 @@ export class OrderConfirmComponent implements OnInit {
     this.http.get('http://127.0.0.1:8000/api/orderconfirm',httpOptions)
     .subscribe(Response => {
       this.order=Response;
-      console.log(this.order.order)
+      this.orderorder=this.order.order
+      this.orderorderline=this.order.orderline
     });
 
   }

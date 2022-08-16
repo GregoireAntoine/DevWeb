@@ -2,7 +2,7 @@
 
 <body>
   <ngx-htl-horizontal-timeline [items]="items"></ngx-htl-horizontal-timeline>
-  <div style="margin: 0px; padding: 0px;" *ngFor="let order of order.order;" >
+  <div style="margin: 0px; padding: 0px;" *ngFor="let order of orderorder;" >
 
   Votre commande numéro <strong>{{order.ref }}</strong> a bien été enregistrée.<br>
   Le nombre d'article total est de : <strong>{{order.total_quantity}}</strong><br>
@@ -23,7 +23,7 @@
 </tr>
 </thead>
 <tbody>
-<tr *ngFor="let orderline of order.orderline;">
+<tr *ngFor="let orderline of orderorderline;">
 
   <td>{{orderline.name}}</td>
   <td>{{orderline.quantity}}</td>
