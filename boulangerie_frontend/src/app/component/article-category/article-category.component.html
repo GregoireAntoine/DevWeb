@@ -31,19 +31,19 @@
 
             <div   id="{{product.product_category_id_id}}">
                 <div class="card mb-4 box-shadow">
-                 <a href="">
+
                 <img height="220"class="card-img-top" src="{{product.image}}" alt="Card image cap">
-                </a>
+
                 <div class="card-body">
                   <p class="card-text text-center text-capitalize"  >{{product.name}}   {{product.price}} €</p>
                  <div class=" text-center ">
 
                   <ng-container *ngIf="user !=''">
-                    <select    [(ngModel)]='selectedOption'  >
+                    <select    [(ngModel)]='selectedOption[product.id]'  >
                         <option  *ngFor='let in of counter(50) ;let i = index '  [id]=i+1 [value]=i+1>{{i+1}}</option>
                     </select>
 
-                    <button class="btn btn-primary" (click)=addtocart(product,selectedOption) style="margin-left:10px;">  Ajouter au panier</button>
+                    <button class="btn btn-primary" (click)=addtocart(product,selectedOption[product.id],product.id) style="margin-left:10px;">  Ajouter au panier</button>
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                   </ng-container>
 

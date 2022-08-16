@@ -16,11 +16,14 @@ export class ArticleCategoryComponent implements OnInit {
   products: any[]  = [];
   compteur: any[]  = [];
   quantity_number: any[]  = [];
-  selectedOption : number =1;
+  selectedOption : any[]  = [];
   api_link : string='http://127.0.0.1:8000/api';
   productdata : string=''
   a:any;
   user:any;
+  numeroproduit:any;
+  idleplusgrand:any;
+  endroitdata:number=0;
   nmbr_article(){
     var nombre=0;
     while(nombre<51){
@@ -52,6 +55,20 @@ export class ArticleCategoryComponent implements OnInit {
       console.log(Response)
       this.product=Response;
       this.quantity_number= new Array(50)
+
+      this.idleplusgrand=0
+      for(this.numeroproduit in this.product ){
+        if (this.idleplusgrand<this.product[this.numeroproduit]['id']){
+          this.idleplusgrand=this.product[this.numeroproduit]['id']
+        }
+
+      }
+
+      while (this.endroitdata<this.idleplusgrand+1){
+        console.log( "salut")
+        this.selectedOption[this.endroitdata]=1
+        this.endroitdata+=1
+      }
     });
 
     this.http.get('http://127.0.0.1:8000/api/productcategory',httpOptions)
@@ -61,9 +78,9 @@ export class ArticleCategoryComponent implements OnInit {
 
   }
 
-  addtocart(item: any ,quantity: number){
+  addtocart(item: any ,quantity: number, product_id:any){
     this.cartService.addtoCart(item,quantity);
-    this.selectedOption=1
+    this.selectedOption[product_id]=1
   }
 
   filter_product(category : any){
