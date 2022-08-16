@@ -1,8 +1,6 @@
 from distutils.command.upload import upload
 from itertools import product
 from operator import imod
-import pdb
-from turtle import update
 from urllib import request
 
 from rest_framework.views import APIView
