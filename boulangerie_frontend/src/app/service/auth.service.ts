@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   })
 export class AuthService {
 
-    api_url:string="http://127.0.0.1:8000/api/token/"
+    api_url:string="https://admin.boulangerie.domaineprojetadmin.ovh/api/token/"
     constructor(private http:HttpClient,private route:Router){}
 
     login(username:string,password:string){
@@ -25,7 +25,7 @@ export class AuthService {
             localStorage.setItem("user", username)
             localStorage.setItem("psw", password)
             //this.route.navigate(['/products']);
-            window.location.href = "http://localhost:4200/home";
+            window.location.href = "https://boulangerie.domaineprojetadmin.ovh/api/home";
             console.log(this.getmyaccount())
           }
          );
@@ -44,7 +44,7 @@ export class AuthService {
         'Authorization': 'Basic '+token
       })
 
-      const api_url:string="http://127.0.0.1:8000/api/myaccount"
+      const api_url:string="https://admin.boulangerie.domaineprojetadmin.ovh/api/myaccount"
 
       return this.http.get(api_url,{headers : headers_account}).subscribe()
     }
