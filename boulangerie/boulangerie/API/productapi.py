@@ -34,7 +34,7 @@ class ProductAPIView(generics.ListCreateAPIView):
         else:
             return super().get_queryset()
 
-    def post(self, request,pk, format=None):
+    def post(self, request, format=None):
 
         serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
@@ -46,7 +46,7 @@ class ProductAPIView(generics.ListCreateAPIView):
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-    def put(self,pk, request,format=None):
+    def put(self, request,format=None):
         
         snippet = Product.objects.get(name=request.data['name'])
         serializer = ProductSerializer(snippet, data=request.data)
