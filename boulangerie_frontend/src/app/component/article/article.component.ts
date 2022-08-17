@@ -45,6 +45,8 @@ export class ArticleComponent implements OnInit {
     const httpOptions = {
 
       headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true',
         'Content-Type':  'application/json',
         'Authorization': 'Basic Z3JlZ29pcmU6YW50b2luZTIx'
       })
