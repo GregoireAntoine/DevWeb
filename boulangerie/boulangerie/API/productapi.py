@@ -41,7 +41,9 @@ class ProductAPIView(generics.ListCreateAPIView):
             serializer.save()
         return Response(status=status.HTTP_201_CREATED)
 
-    def delete(self, pk, format=None):
+    def delete(self, request,pk, format=None):
+        import pdb
+        pdb.set_trace()
         snippet = Product.objects.filter(id=pk)
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
