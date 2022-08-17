@@ -110,7 +110,7 @@ export class CheckoutComponent implements OnInit {
     );
 
 console.log(JSON.stringify(this.array_order))
-this.http.post('http://127.0.0.1:8000/api/order',JSON.stringify(this.array_order),httpOptions).subscribe()
+this.http.post('https://admin.boulangerie.domaineprojetadmin.ovh/api/order',JSON.stringify(this.array_order),httpOptions).subscribe()
 console.log(JSON.stringify(this.array_order))
 this.cartService.removeAllCart()
 

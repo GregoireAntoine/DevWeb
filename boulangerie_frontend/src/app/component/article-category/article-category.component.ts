@@ -18,7 +18,7 @@ export class ArticleCategoryComponent implements OnInit {
   compteur: any[]  = [];
   quantity_number: any[]  = [];
   selectedOption : any[]  = [];
-  api_link : string='http://127.0.0.1:8000/api';
+  api_link : string='https://admin.boulangerie.domaineprojetadmin.ovh/api';
   productdata : string=''
   a:any;
   user:any;
@@ -46,7 +46,7 @@ export class ArticleCategoryComponent implements OnInit {
     };
 
 // requête de récupération des produits qui ont available_on_website =True et qui appartienne à la bonne catégory
-    this.http.get('http://127.0.0.1:8000/api/product?available_on_website=True&product_category_id='+this.getData(),httpOptions)
+    this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/product?available_on_website=True&product_category_id='+this.getData(),httpOptions)
     .subscribe(Response => {
       console.log(Response)
       this.product=Response;
@@ -68,7 +68,7 @@ export class ArticleCategoryComponent implements OnInit {
       }
     });
 // Récupération des catégories de produits
-    this.http.get('http://127.0.0.1:8000/api/productcategory',httpOptions)
+    this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/productcategory',httpOptions)
     .subscribe(Response => {
       this.category=Response;
     });

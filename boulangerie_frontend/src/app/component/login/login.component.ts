@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     };
     this.userlogin = localStorage.getItem("user")
     if(localStorage.getItem("user")!=""){
-      this.http.get("http://127.0.0.1:8000/api/mycommand",httpOptions)
+      this.http.get("https://admin.boulangerie.domaineprojetadmin.ovh/api/mycommand",httpOptions)
       .subscribe(Response => {
 
       this.data=Response;
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
     deconnection(){
       localStorage.setItem("user","")
-      window.location.href = "http://localhost:4200/home";
+      window.location.href = "https://boulangerie.domaineprojetadmin.ovh/home";
     }
     deletefunction(valeur:any){
       const httpOptions = {
@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
 
 
 
-      this.http.delete('http://127.0.0.1:8000/api/delete/'+valeur+"/",httpOptions).subscribe();
+      this.http.delete('https://admin.boulangerie.domaineprojetadmin.ovh/api/delete/'+valeur+"/",httpOptions).subscribe();
       this.ngOnInit()
     }
 }

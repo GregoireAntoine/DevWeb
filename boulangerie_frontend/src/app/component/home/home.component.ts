@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   compteur: any[]  = [];
   quantity_number: any[]  = [];
   selectedOption : number =1;
-  api_link : string='http://127.0.0.1:8000/api';
+  api_link : string='https://admin.boulangerie.domaineprojetadmin.ovh/api';
   productdata : string=''
   nmbr_article(){
     var nombre=0;
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     };
     // Process checkout data here
     console.log(JSON.stringify(this.messageform.value))
-    this.http.post('http://127.0.0.1:8000/api/message',JSON.stringify(this.messageform.value),httpOptions).subscribe(
+    this.http.post('https://admin.boulangerie.domaineprojetadmin.ovh/api/message',JSON.stringify(this.messageform.value),httpOptions).subscribe(
       data => {
 
         if (data){
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
         'Authorization': 'Basic ' + btoa('gregoire:antoine21')
       })
     };
-    this.http.get('http://127.0.0.1:8000/api/bestsellers',httpOptions)
+    this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/bestsellers',httpOptions)
     .subscribe(Response => {
       this.product=Response;
       this.quantity_number= new Array(50)

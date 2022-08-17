@@ -15,7 +15,7 @@ export class OrderConfirmComponent implements OnInit {
   compteur: any[]  = [];
   quantity_number: any[]  = [];
   selectedOption : number =1;
-  api_link : string='http://127.0.0.1:8000/api';
+  api_link : string='https://admin.boulangerie.domaineprojetadmin.ovh/api';
   productdata : string=''
   orderorder:any;
   orderorderline:any;
@@ -82,7 +82,7 @@ export class OrderConfirmComponent implements OnInit {
       })
     };
     this.wait(1000);
-    this.http.get('http://127.0.0.1:8000/api/orderconfirm',httpOptions)
+    this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/orderconfirm',httpOptions)
     .subscribe(Response => {
       this.order=Response;
       this.orderorder=this.order.order

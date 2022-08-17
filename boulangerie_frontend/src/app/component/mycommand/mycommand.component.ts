@@ -22,7 +22,7 @@ export class MycommandComponent implements OnInit {
 
     };
 
-    this.http.get("http://127.0.0.1:8000/api/mycommand",httpOptions)
+    this.http.get("https://admin.boulangerie.domaineprojetadmin.ovh/api/mycommand",httpOptions)
     .subscribe(Response => {
       console.log(Response)
       this.data=Response;
@@ -40,7 +40,7 @@ deletefunction(valeur:any){
 
   };
   console.log(JSON.stringify(valeur))
-  this.http.post('http://127.0.0.1:8000/api/delete',JSON.stringify(valeur),httpOptions).subscribe()
+  this.http.post('https://admin.boulangerie.domaineprojetadmin.ovh/api/delete',JSON.stringify(valeur),httpOptions).subscribe()
   this.ngOnInit()
 }
 }
