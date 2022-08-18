@@ -39,7 +39,7 @@
                   <p class="card-text text-center text-capitalize"  >{{product.name}}   {{product.price}} €</p>
                  <div class=" text-center ">
 
-
+                  <ng-container *ngIf="user !='' && user != null ">
                     <select    [(ngModel)]='selectedOption[product.id]'  >
 
                         <option  *ngFor='let in of counter(50) ;let i = index '  [id]=i+1 [value]=i+1>{{i+1}}</option>
@@ -47,7 +47,7 @@
 
                     <button class="btn btn-primary" (click)=addtocart(product,selectedOption[product.id],product.id) style="margin-left:10px;">  Ajouter au panier</button>
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
+                  </ng-container>
             </div>
 
                   </div>

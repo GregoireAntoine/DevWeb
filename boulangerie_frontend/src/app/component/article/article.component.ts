@@ -40,7 +40,7 @@ export class ArticleComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.user = localStorage.getItem("user")
 // Information permettant la connexion à la base de donnée.
   /*   const httpOptions = {
 
