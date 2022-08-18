@@ -197,7 +197,7 @@ EMAIL_HOST_USER = "3a2a08e4a7fe62"
 EMAIL_HOST_PASSWORD = "7452f66ce0e21e"
 EMAIL_PORT = "2525"
 SOCIALACCOUNT_LOGIN_ON_GET = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
+CORS_ALLOWED_ORIGINS = ["https://admin.boulangerie.domaineprojetadmin.ovh"]
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
