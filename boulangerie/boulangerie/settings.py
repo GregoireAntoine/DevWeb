@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-^4!#4*_=r)2wl%o^=_ng!hcyqe29i856+=t0d02iza*5dfv2wb
 
 DEBUG = True
 ALLOWED_HOSTS = ['51.83.98.86','admin.boulangerie.domaineprojetadmin.ovh']
-CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
+CSRF_TRUSTED_ORIGINS = ['http://admin.boulangerie.domaineprojetadmin.ovh', 'https://admin.boulangerie.domaineprojetadmin.ovh']
 
 
 # Application definition
