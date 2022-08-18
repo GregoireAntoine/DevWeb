@@ -44,9 +44,10 @@
 <h2>Votre compte :</h2>
           <button  class="btn btn-primary"  id="deconnexion" (click)="deconnection()">se déconnecter</button>
           <div *ngIf="totalcommande == 0 ">
-            <p> Vous n'avez aucunes commandes.</p>
+
+            <p class="text-center" > Vous n'avez aucunes commandes.</p>
             <br>
-            <button style="float:right;margin-left:15px;" routerLink="/products" class="btn btn-primary">voir les produits</button>
+            <button class="text-center" routerLink="/products" class="btn btn-primary">voir les produits</button>
           </div>
           <div *ngIf="totalcommande != 0 ">
           <table *ngFor="let cat of data;" style="width:70%;margin-top:5rem;"class="table table-bordered">
