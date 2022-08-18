@@ -47,7 +47,7 @@
             <br><br><br><br>
             <p class="text-center align-middle" > Vous n'avez aucunes commandes.</p>
             <br>
-            <button class="boutonproduit" routerLink="/products" class="btn btn-primary">voir les produits</button>
+            <button  routerLink="/products" class="btn btn-primary boutonproduit">voir les produits</button>
           </div>
           <div *ngIf="totalcommande != 0 ">
           <table *ngFor="let cat of data;" style="width:70%;margin-top:5rem;"class="table table-bordered">
