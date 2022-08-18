@@ -37,6 +37,7 @@ export class ArticleCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     // Information permettant la connexion à la base de donnée.
+    this.user=localStorage.getItem("user")
     const httpOptions = {
 
       headers: new HttpHeaders({
