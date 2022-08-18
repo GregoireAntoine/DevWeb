@@ -20,7 +20,7 @@
         </tbody>
       </table>
 
-      <ng-container *ngIf="user =='' ||user == null ">
+      <ng-container *ngIf="user !='' && user != null ">
 
         <p style="float:right; color:red"><a routerLink="/login">Connectez  </a>  vous pour pouvoir ajouter des produits à votre panier. </p>
 
