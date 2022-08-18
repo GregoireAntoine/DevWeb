@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-^4!#4*_=r)2wl%o^=_ng!hcyqe29i856+=t0d02iza*5dfv2wb
 
 DEBUG = True
 ALLOWED_HOSTS = ['51.83.98.86','admin.boulangerie.domaineprojetadmin.ovh']
-
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 
 
 # Application definition
@@ -197,7 +197,7 @@ EMAIL_HOST_USER = "3a2a08e4a7fe62"
 EMAIL_HOST_PASSWORD = "7452f66ce0e21e"
 EMAIL_PORT = "2525"
 SOCIALACCOUNT_LOGIN_ON_GET = True
-CORS_ALLOWED_ORIGINS = ["https://boulangerie.domaineprojetadmin.ovh"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
