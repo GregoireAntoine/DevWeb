@@ -40,7 +40,7 @@ export class ArticleComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    console.log("toto")
 // Information permettant la connexion à la base de donnée.
     const httpOptions = {
 
@@ -54,9 +54,9 @@ export class ArticleComponent implements OnInit {
       })
 
     };
-
+    console.log("toto")
     // requête de récupération des produits qui ont available_on_website =True
-    this.http.get('admin.boulangerie.domaineprojetadmin.ovh/api/product?available_on_website=True',httpOptions)
+    this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/product?available_on_website=True',httpOptions)
     .subscribe(Response => {
       this.product=Response; // mise dans la variable product des produits récupérer
 
@@ -78,7 +78,7 @@ export class ArticleComponent implements OnInit {
 
     });
     // Récupération des catégories de produits
-    console.log("toto")
+
     this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/productcategory',httpOptions)
     .subscribe(Response => {
       this.category=Response;
