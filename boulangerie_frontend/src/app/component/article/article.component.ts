@@ -42,7 +42,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
 
 // Information permettant la connexion à la base de donnée.
-    const httpOptions = {
+  /*   const httpOptions = {
 
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin': '*',
@@ -53,6 +53,14 @@ export class ArticleComponent implements OnInit {
         'Authorization': 'Basic ' + btoa('gregoire:antoine21')
       })
 
+    };
+ */
+    const httpOptions = {
+
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa('gregoire:antoine21')
+      })
     };
 
     // requête de récupération des produits qui ont available_on_website =True
