@@ -46,10 +46,13 @@ export class ArticleComponent implements OnInit {
 
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin': '*',
+        "Access-Control-Allow-Methods" : "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers" : "Content-Type, Authorization, X-Requested-With",
         'Access-Control-Allow-Credentials': 'true',
         'Content-Type':  'application/json',
-        'Authorization': 'Basic Z3JlZ29pcmU6YW50b2luZTIx'
+        'Authorization': 'Basic ' + btoa('gregoire:antoine21')
       })
+
     };
 
     // requête de récupération des produits qui ont available_on_website =True
