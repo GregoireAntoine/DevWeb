@@ -53,7 +53,7 @@ export class ArticleComponent implements OnInit {
     };
 
     // requête de récupération des produits qui ont available_on_website =True
-    this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/product?available_on_website=True',httpOptions)
+    this.http.get('admin.boulangerie.domaineprojetadmin.ovh/api/product?available_on_website=True',httpOptions)
     .subscribe(Response => {
       this.product=Response; // mise dans la variable product des produits récupérer
 
