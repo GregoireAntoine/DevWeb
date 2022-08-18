@@ -22,9 +22,14 @@ export class HomeComponent implements OnInit {
   products: any[]  = [];
   compteur: any[]  = [];
   quantity_number: any[]  = [];
-  selectedOption : number =1;
+  selectedOption : any[]  = [];
   api_link : string='https://admin.boulangerie.domaineprojetadmin.ovh/api';
   productdata : string=''
+  endroitdata:number=0;
+  issou:number=0;
+
+  numeroproduit:any;
+  idleplusgrand:any;
   nmbr_article(){
     var nombre=0;
     while(nombre<51){
@@ -84,14 +89,28 @@ export class HomeComponent implements OnInit {
       this.product=Response;
       this.quantity_number= new Array(50)
 
+      this.idleplusgrand=0
+      for(this.numeroproduit in this.product ){
+        if (this.idleplusgrand<this.product[this.numeroproduit]['id']){
+          this.idleplusgrand=this.product[this.numeroproduit]['id']
+        }
+
+      }
+
+      // Initialsiation d'un tableau de la taille valant l'id le plus grand plus 1 qui sera utilisé lors des select option dans la page article html
+      while (this.endroitdata<this.idleplusgrand+1){
+        this.selectedOption[this.endroitdata]=1
+        this.endroitdata+=1
+      }
+
     });
 
   }
 
-  addtocart(item: any ,quantity: number){
+  addtocart(item: any ,quantity: number, product_id:any){
 
     this.cartService.addtoCart(item,quantity);
-    this.selectedOption=1
+    this.selectedOption[product_id]=1
   }
 
 
