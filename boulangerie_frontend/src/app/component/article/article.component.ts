@@ -45,7 +45,7 @@ export class ArticleComponent implements OnInit {
     const httpOptions = {
 
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': 'https://admin.boulangerie.domaineprojetadmin.ovh/api/product?available_on_website=True',
+        'Access-Control-Allow-Origin': 'https://admin.boulangerie.domaineprojetadmin.ovh/api/productcategory',
         "Access-Control-Allow-Methods" : "DELETE, POST, GET, OPTIONS",
         "Access-Control-Allow-Headers" : "Content-Type, Authorization, X-Requested-With",
         'Access-Control-Allow-Credentials': 'true',
