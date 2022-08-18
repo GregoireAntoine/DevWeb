@@ -47,7 +47,7 @@ export class ArticleComponent implements OnInit {
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin': '*',
         "Access-Control-Allow-Methods" : "DELETE, POST, GET, OPTIONS",
-        "Access-Control-Allow-Headers" : "Content-Type, Authorization, X-Requested-With",
+        "Access-Control-Allow-Headers": "Accept",
         'Access-Control-Allow-Credentials': 'true',
         'Content-Type':  'application/json',
         'Authorization': 'Basic ' + btoa('gregoire:antoine21')
