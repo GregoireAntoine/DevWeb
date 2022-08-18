@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   user : any;
   userlogin:any;
   message:any;
+  totalcommande:any;
   public myform :any = FormGroup;
 
   constructor(private authService : AuthService,private http:HttpClient) { }
@@ -42,7 +43,9 @@ export class LoginComponent implements OnInit {
 
       this.data=Response;
       if (this.data.length == 0 ){
-        console.log("pas de commande")
+        this.totalcommande=0
+      }else {
+        this.totalcommande=1
       }
       });
     }
