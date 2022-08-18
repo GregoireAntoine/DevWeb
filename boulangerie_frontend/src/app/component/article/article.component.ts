@@ -45,7 +45,7 @@ export class ArticleComponent implements OnInit {
     const httpOptions = {
 
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': 'https://admin.boulangerie.domaineprojetadmin.ovh',
+        'Access-Control-Allow-Origin': 'https://admin.boulangerie.domaineprojetadmin.ovh/api/productcategory',
         "Access-Control-Allow-Methods" : "DELETE, POST, GET, OPTIONS",
         "Access-Control-Allow-Headers" : "Content-Type, Authorization, X-Requested-With",
         'Access-Control-Allow-Credentials': 'true',
@@ -78,9 +78,12 @@ export class ArticleComponent implements OnInit {
 
     });
     // Récupération des catégories de produits
+    console.log("toto")
     this.http.get('https://admin.boulangerie.domaineprojetadmin.ovh/api/productcategory',httpOptions)
     .subscribe(Response => {
       this.category=Response;
+      console.log("tutu")
+      console.log(this.category)
 
     });
 
