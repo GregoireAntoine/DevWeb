@@ -25,7 +25,7 @@ export class AuthService {
             localStorage.setItem("user", username)
             localStorage.setItem("psw", password)
             //this.route.navigate(['/products']);
-            window.location.href = "https://boulangerie.domaineprojetadmin.ovh/api/home";
+            window.location.href = "https://boulangerie.domaineprojetadmin.ovh/home";
             console.log(this.getmyaccount())
           }
          );
