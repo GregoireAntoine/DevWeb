@@ -38,12 +38,12 @@ export class LoginComponent implements OnInit {
     if(localStorage.getItem("user")!=""){
       this.http.get("https://admin.boulangerie.domaineprojetadmin.ovh/api/mycommand",httpOptions)
       .subscribe(Response => {
-        if (Response){
-          console.log(Response)
-        }
+
 
       this.data=Response;
-
+      if (this.data.length == 0 ){
+        console.log("pas de commande")
+      }
       });
     }
 
