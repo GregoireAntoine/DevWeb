@@ -20,7 +20,7 @@
         </tbody>
       </table>
 
-      <ng-container *ngIf="user ==''">
+      <ng-container *ngIf="user =='' ||user == null ">
 
         <p style="float:right; color:red"><a routerLink="/login">Connectez  </a>  vous pour pouvoir ajouter des produits à votre panier. </p>
 
@@ -39,7 +39,7 @@
                   <p class="card-text text-center text-capitalize"  >{{product.name}}   {{product.price}} €</p>
                  <div class=" text-center ">
 
-                  <ng-container *ngIf="user !=''">
+                  <ng-container *ngIf="user !='' && user != null ">
                     <select    [(ngModel)]='selectedOption[product.id]'  >
 
                         <option  *ngFor='let in of counter(50) ;let i = index '  [id]=i+1 [value]=i+1>{{i+1}}</option>
