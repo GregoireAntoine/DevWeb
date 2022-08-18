@@ -6,7 +6,7 @@
 
 
 
-<div *ngIf="user == '' || user == null">
+<div *ngIf="userlogin == '' || userlogin == null">
   <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -40,7 +40,7 @@
 
 
 
-        <div  *ngIf="user != '' && user != null ">
+        <div  *ngIf="userlogin != '' && userlogin != null ">
 <h2>Votre compte :</h2>
           <button  class="btn btn-primary"  id="deconnexion" (click)="deconnection()">se déconnecter</button>
           <div *ngIf="totalcommande == 0 ">
