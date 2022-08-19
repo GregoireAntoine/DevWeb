@@ -10,6 +10,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { OrderConfirmComponent } from './component/order-confirm/order-confirm.component'
 import { ArticleCategoryComponent } from './component/article-category/article-category.component'
 import { MycommandComponent } from './component/mycommand/mycommand.component';
+import { CDVComponent } from './component/cdv/cdv.component';
 const routes: Routes = [
   {path:'', redirectTo:'home',pathMatch:'full'},
   {path:'home', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'order_confirm', component: OrderConfirmComponent},
   {path:'article_category', component: ArticleCategoryComponent},
   {path:'mycommand', component: MycommandComponent},
+  {path:'cdv', component: CDVComponent},
 ];
 
 @NgModule({
