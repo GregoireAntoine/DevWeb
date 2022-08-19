@@ -33,8 +33,8 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig,
 } from 'angularx-social-login';
-import { RGPDComponent } from './rgpd/rgpd.component';
-import { CDVComponent } from './cdv/cdv.component';
+import { RGPDComponent } from './component/rgpd/rgpd.component';
+import { CDVComponent } from './component/cdv/cdv.component';
 
 @NgModule({
 
