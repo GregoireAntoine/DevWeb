@@ -20,11 +20,12 @@
 
 <div *ngIf="user != ''">
         <button style="float:left;margin-right:15px;"routerLink="/login" class="btn btn-primary">{{user}}</button>
+
   </div>
 
   <div *ngIf="user == '' || user == null ">
     <button style="float:right;margin-right:15px;margin-left:15px;"routerLink="/login" class="btn btn-primary">Login</button>
 </div>
-
+<button style="float:left;margin-right:15px;" routerLink="/cdv" class="btn btn-primary">CDV</button>
     </div>
 </header>
