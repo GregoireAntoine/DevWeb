@@ -7,13 +7,7 @@
       </div>
 
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-          <p class="lead fw-normal mb-0 me-3">Se connecter avec : </p>
-          <a type="button" href=" provider_login_url 'google' " class="btn btn-primary btn-floating mx-1">
-            <i class="fab fa-google"></i><br><br>
-          </a>
 
-        </div>
          <form action="/login" [formGroup]="myform" (ngSubmit)="onSubmit()" >
           <label>Nom d'utilisateur</label><br>
           <input type="text" formControlName="username"><br><br>
