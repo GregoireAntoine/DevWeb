@@ -43,10 +43,11 @@ export class ItemsService {
   }
 
   delete(orderId: number): Observable<any> {
-    return this.http.delete(`${this.baseRoute}/delete/${orderId}`).pipe(
-      map((result) => {
-        return result;
-      })
+    return this.http.delete(`${this.baseRoute}/delete/${orderId}`)
+      .pipe(
+        map((result) => {
+          return result;
+        })
     )
   }
 }

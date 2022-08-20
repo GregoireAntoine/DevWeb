@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+//import { TimelineItem } from 'ngx-horizontal-timeline';
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import { CartService} from "../../../shared/services/cart.service";
 
 @Component({
   selector: 'app-cart',
