@@ -18,9 +18,9 @@ export class AuthComponent implements OnInit {
   isLogin: boolean = true;
   faRibbon = faTrash;
   data:any;
-  
+
   connectedUser$: Observable<User>;
-  
+
   message:any;
   totalcommande:any;
   public loginForm :any = FormGroup;
@@ -29,13 +29,13 @@ export class AuthComponent implements OnInit {
     console.log(this.isLogin);
     return this.isLogin;
   };
-  
+
   constructor(private authService : AuthService,
               private router: Router,
               private store: Store,
               private http:HttpClient,
               private itemsService: ItemsService) { }
-  
+
   ngOnInit(): void {
     this.connectedUser$ = this.store.select<User>('connectedUser');
     this.registerForm = new FormGroup({
@@ -59,15 +59,15 @@ export class AuthComponent implements OnInit {
         });
     }
   }
-  
+
   get r(){
     return this.registerForm.controls
   }
-  
+
   get f(){
     return this.loginForm.controls
   }
-  
+
   onSubmit(){
     if (this.isLogin) {
       this.authService.login(this.f['username'].value,this.f["password"].value)
@@ -81,17 +81,18 @@ export class AuthComponent implements OnInit {
         })
     }
   }
-  
+
   deconnection(){
     localStorage.clear();
     this.store.set('connectedUser', undefined);
     this.router.navigateByUrl('home');
   }
-  
-  deletefunction(orderId:any){
-    this.itemsService.delete(orderId).subscribe(() => this.ngOnInit());
+
+  deletefunction(order:any){
+    console.log(order);
+    this.itemsService.delete(order.id).subscribe(() => this.ngOnInit());
   }
-  
+
   onRegister() {
     this.isLogin = !this.isLogin;
   }

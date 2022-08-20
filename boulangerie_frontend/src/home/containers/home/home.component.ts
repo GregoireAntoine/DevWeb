@@ -5,6 +5,9 @@
   import { AuthService } from 'src/shared/services/auth.service';
   import { ItemsService } from 'src/shared/services/items.service';
   import {environment} from "../../../environments/environment";
+  import {User} from "../../../shared/models/user";
+  import {Observable} from "rxjs";
+  import {Store} from "../../../store";
 
 @Component({
   selector: 'app-home',
@@ -40,12 +43,14 @@ export class HomeComponent implements OnInit {
   counter(i: number) {
     return new Array(i);
   }
-
-  constructor(private http:HttpClient , private cartService : CartService, private itemsService: ItemsService, private formBuilder: FormBuilder, private authService: AuthService) {
+  connectedUser$: Observable<User>;
+  constructor(private http:HttpClient , private cartService : CartService, private itemsService: ItemsService, private formBuilder: FormBuilder, private authService: AuthService, private store: Store) {
   }
+
 
   ngOnInit(): void {
     this.user=localStorage.getItem("user")
+    this.connectedUser$ = this.store.select<User>('connectedUser');
 
     this.itemsService.getBestSellers().subscribe(Response => {
         this.product=Response;

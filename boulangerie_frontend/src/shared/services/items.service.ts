@@ -8,21 +8,31 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemsService {
-  
+
   private readonly baseRoute: string = environment.serverUrl + Config.prefix;
-  
+
   constructor(
     private http: HttpClient
   ) { }
-  
-  getProducts() {
-  
+
+  getProducts(): Observable<any> {
+  return this.http.get(`${this.baseRoute}/product`)
+    .pipe(
+      map((result: any) => {
+        return result;
+      })
+    )
   }
-  
-  getCategories() {
-  
+
+  getCategories(): Observable<any> {
+    return this.http.get(`${this.baseRoute}/productcategory`)
+      .pipe(
+        map((result: any) => {
+          return result
+        })
+      )
   }
-  
+
   getBestSellers(): Observable<any> {
     return this.http.get(`${this.baseRoute}/bestsellers`)
       .pipe(
@@ -31,7 +41,7 @@ export class ItemsService {
         })
       )
   }
-  
+
   delete(orderId: number): Observable<any> {
     return this.http.delete(`${this.baseRoute}/delete/${orderId}`).pipe(
       map((result) => {

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "django_static_fontawesome",
     "rest_framework",
     "rest_framework_simplejwt",
+    "corsheaders"
     ###'fontawesomefree',
 ]
 
@@ -197,8 +198,15 @@ EMAIL_HOST_USER = "3a2a08e4a7fe62"
 EMAIL_HOST_PASSWORD = "7452f66ce0e21e"
 EMAIL_PORT = "2525"
 SOCIALACCOUNT_LOGIN_ON_GET = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
-
+CORS_ALLOWED_ORIGINS = ["http://localhost:4200", "https://admin.boulangerie.domaineprojetadmin.ovh"]
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.

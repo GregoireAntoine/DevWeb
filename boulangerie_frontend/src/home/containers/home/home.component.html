@@ -6,7 +6,10 @@
 
 <br>
 <div id="portfolio" class="container-fluid text-center bg-grey">
-  <h2>Nos bests sellers</h2>
+  <ng-container *ngIf="(connectedUser$|async)">
+    <h2>Nos bests sellers</h2>
+  </ng-container>
+
 
   <div class="container">
     <div class="row " >
@@ -21,7 +24,7 @@
             <div class="card-body">
               <p class="card-text text-center text-capitalize"  >{{product.name}}   {{product.price}} €</p>
               <div class=" text-center ">
-                <ng-container *ngIf="user !='' && user != null ">
+                <ng-container *ngIf="!(connectedUser$|async)">
                   <select    [(ngModel)]='selectedOption[product.id]'  >
 
                     <option  *ngFor='let in of counter(50) ;let i = index '  [id]=i+1 [value]=i+1>{{i+1}}</option>
