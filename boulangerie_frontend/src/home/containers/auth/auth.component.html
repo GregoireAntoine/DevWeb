@@ -15,9 +15,9 @@
 
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <label>Nom d'utilisateur</label><br>
-              <input class="form-control" type="text" formControlName="username"><br><br>
+              <input class="form-control" type="text" formControlName="username"><br>
               <label>Mot de passe</label><br>
-              <input class="form-control" type="password" formControlName="password"><br><br>
+              <input class="form-control" type="password" formControlName="password"><br>
               <button type="submit" class="btn btn-primary btn-xl">Se connecter</button>
             </form>
             <br>
@@ -40,11 +40,11 @@
 
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
               <label>Nom d'utilisateur</label><br>
-              <input class="form-control" type="text" formControlName="username"><br><br>
+              <input class="form-control" type="text" formControlName="username"><br>
               <label>email</label><br>
-              <input class="form-control" type="email" formControlName="email"><br><br>
+              <input class="form-control" type="email" formControlName="email"><br>
               <label>Mot de passe</label><br>
-              <input class="form-control" type="password" formControlName="password"><br><br>
+              <input class="form-control" type="password" formControlName="password"><br>
               <button type="submit" class="btn btn-primary">S'inscrire</button>
             </form>
             <br>
@@ -65,6 +65,15 @@
     <br>
     <button  routerLink="/products" class="btn btn-primary boutonproduit">voir les produits</button>
   </div>
+
+  <div *ngIf="isUpdatingQuantity">
+    <br>
+    Modification de la quantité.
+    <input class="form-control" type="text" [(ngModel)]="newQuantity">
+    <button class="btn btn-success btn-xl" (click)="onUpdateQuantity()">Valider</button>
+    <button class="btn btn-secondary btn-xl" (click)="onToggleUpdateQuantity()">Annuler</button>
+    <br>
+  </div>
   <div *ngIf="totalcommande != 0 ">
     <table *ngFor="let cat of data;" style="width:70%;margin-top:5rem;"class="table table-bordered">
       <thead>
@@ -73,7 +82,7 @@
         <th scope="col">Passé le : {{cat.order.date_order}}</th>
         <th scope="col">Prévu le : {{cat.order.date_takeaway}}</th>
 
-<!--        <th scope="col" class="text-center"> <button id="poubelle" (click)="deletefunction(cat.order)" ><fa-icon [icon]="faRibbon"></fa-icon></button></th>-->
+        <th scope="col" class="text-center"></th>
 
       </tr>
       </thead>
@@ -82,15 +91,26 @@
       <tr *ngFor="let product of cat.orderline;" >
 
         <td class="text-center">{{product.name}}</td>
-        <td class="text-center" >{{product.quantity}}</td>
+        <td class="text-center" >
+          <ng-container>
+            <h4>{{product.quantity}}</h4>
+            <button class="btn btn-warning btn-xl" (click)="onToggleUpdateQuantity(product)">Modifier la quantité</button>
+
+          </ng-container>
+
+        </td>
         <td class="text-center">{{product.price}} €</td>
+        <td></td>
       </tr>
       <tr>
         <th scope="col"></th>
-        <th scope="col">Quantité : {{cat.order.total_quantity}}</th>
+        <th scope="col">
+            <div class="col">Quantité : {{cat.order.total_quantity}}</div>
+
+        </th>
         <th scope="col">Total : {{cat.order.total_price | number : '1.2-2'}} €</th>
 
-<!--        <th scope="col"></th>-->
+        <th scope="col"> <button class="btn btn-danger" id="poubelle" (click)="deletefunction(cat.order)" ><fa-icon [icon]="faRibbon"></fa-icon></button></th>
       </tr>
       </tbody>
     </table>

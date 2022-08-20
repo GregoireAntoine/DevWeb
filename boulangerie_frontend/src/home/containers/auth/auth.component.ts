@@ -19,7 +19,12 @@ export class AuthComponent implements OnInit {
   faRibbon = faTrash;
   data:any;
 
+  newQuantity: number;
+  productToModify: any;
+
   connectedUser$: Observable<User>;
+
+  isUpdatingQuantity: boolean = false;
 
   message:any;
   totalcommande:any;
@@ -51,12 +56,24 @@ export class AuthComponent implements OnInit {
       this.authService.userCommands()
         .subscribe(Response => {
           this.data=Response;
+          console.log(this.data);
           if (this.data.length == 0 ){
             this.totalcommande=0
           }else {
             this.totalcommande=1
           }
         });
+    }
+  }
+
+  onToggleUpdateQuantity(product?:any): void {
+    this.isUpdatingQuantity =!this.isUpdatingQuantity;
+    if(this.isUpdatingQuantity) {
+      this.newQuantity = product.quantity;
+      this.productToModify = product;
+    } else {
+      this.newQuantity = null;
+      this.productToModify = null;
     }
   }
 
@@ -79,6 +96,16 @@ export class AuthComponent implements OnInit {
         .subscribe((result) => {
           this.router.navigateByUrl('login');
         })
+    }
+  }
+
+  onUpdateQuantity(){
+    if (this.productToModify.quantity !== this.newQuantity) {
+      this.productToModify.quantity = this.newQuantity;
+      this.itemsService.updateOrderline(this.productToModify)
+        .subscribe((result) => {
+      this.ngOnInit();
+      });
     }
   }
 

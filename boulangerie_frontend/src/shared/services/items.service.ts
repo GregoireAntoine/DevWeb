@@ -42,6 +42,15 @@ export class ItemsService {
       )
   }
 
+  updateOrderline(order: any): Observable<any> {
+    return this.http.post(`${this.baseRoute}/orderline`, order)
+      .pipe(
+        map((result: any) => {
+          return result;
+        })
+      )
+  }
+
   delete(orderId: number): Observable<any> {
     return this.http.delete(`${this.baseRoute}/delete/${orderId}`)
       .pipe(
