@@ -12,4 +12,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getImageUrl(productImage: string): string {
+    if(productImage) {
+      return productImage;
+    } else {
+      return 'assets/bread.png';
+    }
+  }
+
 }
