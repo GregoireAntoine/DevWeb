@@ -43,18 +43,19 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
-   
+
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("api/productcategory", ProductCategoryAPIView.as_view()),
     path("api/productcategory/<int:pk>/", ProductCategoryAPIView.as_view()),
     path("api/product", ProductAPIView.as_view()),
-    path("api/product/<int:pk>/", ProductAPIView.as_view()),
+    path("api/product/<int:pk>/", ProductAPIView.as_view(), name='updateOrder'),
     path("product", ProductAPIView.as_view()),
     path("api/message", MessageAPIView.as_view()),
     path("api/orderconfirm", OrderConfirmAPIView.as_view()),
     path("api/bestsellers", BestSellerAPIView.as_view()),
     path("api/order", OrderAPIView.as_view()),
+    path("api/order/<int:pk>/", OrderAPIView.as_view()),
     path("api/mycommand", MyCommandAPIView.as_view()),
     path("api/login", LoginView.as_view()),
     path("api/delete/<int:pk>/", DeletePostViewSet.as_view()),
