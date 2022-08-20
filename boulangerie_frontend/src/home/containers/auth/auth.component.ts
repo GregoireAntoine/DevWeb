@@ -13,7 +13,7 @@ import { Store } from 'src/store';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  
+  isLogin: boolean = true;
   faRibbon = faTrash;
   data:any;
   user : any;
@@ -66,5 +66,9 @@ export class AuthComponent implements OnInit {
   
   deletefunction(orderId:any){
     this.itemsService.delete(orderId).subscribe(() => this.ngOnInit());
+  }
+  
+  onRegister() {
+    this.isLogin = !this.isLogin;
   }
 }

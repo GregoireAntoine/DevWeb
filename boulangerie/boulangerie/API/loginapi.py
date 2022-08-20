@@ -17,10 +17,12 @@ def get_tokens_for_user(user):
 class LoginView(APIView):
     def post(self, request, format=None):
         serializer = LoginSerializer(data=request.data)
+
         serializer.is_valid(raise_exception=True)
         username = serializer.data.get("username")
         password = serializer.data.get("password")
         user = authenticate(username=username, password=password)
+
 
         if user is not None:
             token = get_tokens_for_user(user)

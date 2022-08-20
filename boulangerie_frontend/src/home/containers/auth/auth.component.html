@@ -3,37 +3,36 @@
 
 <ng-container *ngIf="!userlogin; else userConnected">
   <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-               class="img-fluid" alt="Sample image">
+    <ng-container *ngIf="isLogin; else register">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                 class="img-fluid" alt="Sample image">
+          </div>
+
+          <div  class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+              <label>Nom d'utilisateur</label><br>
+              <input class="form-control" type="text" formControlName="username"><br><br>
+              <label>Mot de passe</label><br>
+              <input class="form-control" type="password" formControlName="password"><br><br>
+              <button type="submit" class="btn btn-primary btn-xl">login</button>
+            </form>
+            <br>
+            <a style="float:left" (click)="onRegister()" >s'inscrire</a>
+          </div>
+
+
         </div>
-
-        <div  class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-
-          <form [formGroup]="myform" (ngSubmit)="onSubmit()">
-            <label>Nom d'utilisateur</label><br>
-            <input class="form-control" type="text" formControlName="username"><br><br>
-            <label>Mot de passe</label><br>
-            <input class="form-control" type="password" formControlName="password"><br><br>
-            <button type="submit" class="btn btn-primary btn-large">login</button>
-          </form>
-          <br>
-          <a style="float:left" href="/register">s'inscrire</a>
-        </div>
-
-
       </div>
-    </div>
+    </ng-container>
+    <ng-template #register>
+
+    </ng-template>
   </section>
-
 </ng-container>
-
-
-
-
-
 
 <ng-template #userConnected>
   <h2>Votre compte :</h2>

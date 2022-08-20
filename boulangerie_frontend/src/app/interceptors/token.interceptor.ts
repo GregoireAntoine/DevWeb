@@ -4,12 +4,17 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        req = req.clone({
-            setHeaders: {
-                'Authorization': 'Basic ' + btoa(localStorage.getItem("user")+':'+localStorage.getItem("psw"))
-            }
-        });
-        return next.handle(req);
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = localStorage.getItem('token');
+    if (token) {
+      console.log(token);
+      const parsedToken = JSON.parse(token);
+      req = req.clone({
+        setHeaders: {
+          'Authorization': `Bearer ${parsedToken.refresh}`
+        }
+      });
     }
+    return next.handle(req);
+  }
 }
