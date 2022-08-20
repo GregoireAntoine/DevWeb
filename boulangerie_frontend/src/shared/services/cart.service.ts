@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import Config from 'src/app/config/serverUrls.json';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
+  private readonly baseRoute: string = environment.serverUrl + Config.prefix;
   public cartItemList : any =[];
   public info_order : any = {};
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
+
   getProducts(){
     return this.productList.asObservable();
   }
@@ -39,15 +46,15 @@ export class CartService {
 
     }else{
       this.cartItemList.forEach((element : any) =>
-      {
+        {
 
-        if (element.name==product.name){
+          if (element.name==product.name){
 
-        element.quantity=element.quantity+product.quantity
-        verification= false
-      }
+            element.quantity=element.quantity+product.quantity
+            verification= false
+          }
 
-    }
+        }
 
 
 
@@ -61,30 +68,23 @@ export class CartService {
     }
 
 
-   /*var product_index =  this.cartItemList.indexOf(product)
-    var verification = false
-
-
-
-    if (product_index ==-1){
-      console.log("pas présent")
-      Object.assign(product,{quantity : quantity,total : quantity * product.price})
-      this.cartItemList.push(product);
-      this.productList.next(this.cartItemList);
-
-    } else{
-      console.log("présent")
-      var old_quantity: number = +this.cartItemList[product_index].quantity;
-      console.log(old_quantity)
-       this.cartItemList[product_index].quantity= old_quantity+quantity
-       console.log( this.cartItemList[product_index].quantity)
-    }
-    this.cartItemList.forEach((element : any) =>
-
-      console.log( "a")
-
-
-    );*/
+    /*var product_index =  this.cartItemList.indexOf(product)
+     var verification = false
+     if (product_index ==-1){
+       console.log("pas présent")
+       Object.assign(product,{quantity : quantity,total : quantity * product.price})
+       this.cartItemList.push(product);
+       this.productList.next(this.cartItemList);
+     } else{
+       console.log("présent")
+       var old_quantity: number = +this.cartItemList[product_index].quantity;
+       console.log(old_quantity)
+        this.cartItemList[product_index].quantity= old_quantity+quantity
+        console.log( this.cartItemList[product_index].quantity)
+     }
+     this.cartItemList.forEach((element : any) =>
+       console.log( "a")
+     );*/
 
     this.getTotalPrice();
 
@@ -121,4 +121,5 @@ export class CartService {
   getlist(){
     return this.cartItemList
   }
+
 }

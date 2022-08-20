@@ -8,17 +8,22 @@ from rest_framework import status
 class ProductAPIView(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
+    print(queryset[0].count_sold)
 
     def get_queryset(self):
         available_on_website = self.request.query_params.get(
             "available_on_website", None
         )
         product_category_id = self.request.query_params.get("product_category_id", None)
+        count_sold = self.request.query_params.get("Price", None)
+        print(count_sold)
         if product_category_id:
             if available_on_website:
                 product = Product.objects.filter(
                     available_on_website=available_on_website,
                     product_category_id=product_category_id,
+                    product_sold= count_sold,
+
                 )
                 return product
             else:
@@ -49,10 +54,10 @@ class ProductAPIView(generics.ListCreateAPIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def put(self, request,format=None):
-        
+
         snippet = Product.objects.get(name=request.data['name'])
         serializer = ProductSerializer(snippet, data=request.data)
-       
+
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data,status=status.HTTP_202_ACCEPTED)

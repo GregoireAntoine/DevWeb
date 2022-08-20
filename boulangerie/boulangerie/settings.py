@@ -28,8 +28,8 @@ SECRET_KEY = "django-insecure-^4!#4*_=r)2wl%o^=_ng!hcyqe29i856+=t0d02iza*5dfv2wb
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['51.83.98.86','admin.boulangerie.domaineprojetadmin.ovh']
-CSRF_TRUSTED_ORIGINS = ['http://admin.boulangerie.domaineprojetadmin.ovh', 'https://admin.boulangerie.domaineprojetadmin.ovh']
+ALLOWED_HOSTS = ['51.83.98.86','admin.boulangerie.domaineprojetadmin.ovh', '127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['http://admin.boulangerie.domaineprojetadmin.ovh', 'https://admin.boulangerie.domaineprojetadmin.ovh', 'http://localhost/']
 
 
 # Application definition
@@ -94,9 +94,9 @@ WSGI_APPLICATION = "boulangerie.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "boulangerie",
-        "USER": "django",
-        "PASSWORD": "Gregoire21#21",
+        "NAME": "test",
+        "USER": "postgres",
+        "PASSWORD": "root",
         "HOST": "localhost",
         "PORT": "5432",
     }

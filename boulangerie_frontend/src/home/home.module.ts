@@ -11,6 +11,7 @@ import { ProductsComponent } from 'src/home/containers/products/products.compone
 import { AuthComponent } from 'src/home/containers/auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from 'src/home/containers/cart/cart.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,16 +22,20 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    AuthComponent,
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     
     // Custom Modules
     SharedModule,
-    FormsModule,
-    ReactiveFormsModule
+    FontAwesomeModule,
   ]
 })
 export class HomeModule { }
