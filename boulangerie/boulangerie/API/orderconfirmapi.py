@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from boulangerie.templates.extension_views.send_mail import sent_order
 
 class OrderConfirmAPIView(APIView):
+    # On récupère la dernière commande
     def get(self, request, *args, **kwargs):
         ref = Order.objects.all().order_by("-ref")[:1]
         serializer = OrderRecupSerializer(ref, many=True)
@@ -15,10 +16,11 @@ class OrderConfirmAPIView(APIView):
         serializer_orderline.data
 
         lst_tr = []
-        ### fonction rajout nom
         compteur = 0
+        # on parcourt les orderlines
         while compteur < len(orderline):
             compteurproduit = 0
+            # On parcours les produits qui se trouvent dans les orderlines
             while compteurproduit < len(serializer_product.data):
 
                 if (
@@ -29,18 +31,20 @@ class OrderConfirmAPIView(APIView):
                         "name"
                     ] = serializer_product.data[compteurproduit]["name"]
                 compteurproduit = compteurproduit + 1
+                # On construit le document html à envoyé par mail
             lst_tr.append(
                 f'<tr><td>{serializer_orderline.data[compteur]["name"]}</td><td>{ serializer_orderline.data[compteur]["quantity"]}<td><td>{ serializer_orderline.data[compteur]["price"]}<td></tr>'
             )
             order_line_tr = "<br>".join(lst_tr)
             compteur = compteur + 1
 
-        ### fonction rajout nom au dessus
-
+       
+        # On rassemble les données order et orderlines dans un seul tableau.
         tableau_data = {
             "order": serializer.data,
             "orderline": serializer_orderline.data,
         }
+        # appelle de la fopnction permettant d'envoyé le mail de confirmation 
         sent_order(tableau_data, order_line_tr, request.user, request.user.email)
 
         return Response(tableau_data)

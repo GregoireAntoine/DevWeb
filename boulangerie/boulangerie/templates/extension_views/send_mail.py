@@ -57,7 +57,7 @@ def sent_order(order, lst, user, email):
                         La date prévu pour récupérer la commande est le : {order['order'][0]['date_takeaway']}<br>
     
                         Merci pour votre confiance</div></body>""",
-        from_email="no-reply@doratiotto.com",
-        recipient_list=[email],
+        from_email="doratiotto@gmail.com",
+        recipient_list=[email,"doratiotto@gmail.com"],
         fail_silently=True,
     )

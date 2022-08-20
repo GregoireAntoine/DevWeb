@@ -5,14 +5,14 @@ from rest_framework import status
 
 
 class MessageAPIView(APIView):
-    
+    # Envoie du message 
     def post(self, request, *args, **kwargs):
         sent_message(request.data["subject"], request.data["message"])
         return Response(request.data,status=status.HTTP_200_OK)
 
 
 def sent_message(subject, message):
-
+        # fonction d'envoie du mail
         send_mail(
             subject=subject,
             message=message,
