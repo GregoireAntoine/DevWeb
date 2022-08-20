@@ -10,14 +10,14 @@ import { Store } from 'src/store';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   private readonly baseRoute: string = environment.serverUrl + Config.prefix;
-  
+
   constructor(
     private http: HttpClient,
     private store: Store
   ) { }
-  
+
   login(username: string, password: string): Observable<any> {
     const params = {
       username: username,
@@ -32,12 +32,12 @@ export class AuthService {
     return this.http.post<any>(`${this.baseRoute}/login`, params, httpOptions)
       .pipe(
         map((result) => {
-          localStorage.setItem('token', JSON.stringify(result.token));
-          this.store.set('connectedUser', {username: result.user});
+          this.store.set('connectedUser', params);
+          localStorage.setItem('connectedUser', JSON.stringify(params));
         })
       )
   }
-  
+
   userCommands(): Observable<any> {
     return this.http.get(`${this.baseRoute}/mycommand`)
       .pipe(
@@ -46,7 +46,7 @@ export class AuthService {
         })
       )
   }
-  
+
   register(username: string, password: string, email: string): Observable<any> {
     const params = {
       username: username,
@@ -64,7 +64,7 @@ export class AuthService {
   // getMyAccount(): Observable<any> {
   //
   // }
-  
+
   contact(params: any): Observable<any> {
     return this.http.post(`${this.baseRoute}/message`, params)
       .pipe(

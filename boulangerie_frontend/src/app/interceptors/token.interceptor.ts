@@ -5,13 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('connectedUser');
     if (token) {
-      console.log(token);
       const parsedToken = JSON.parse(token);
       req = req.clone({
         setHeaders: {
-          'Authorization': `Bearer ${parsedToken.access}`
+          'Authorization': 'Basic ' + btoa(parsedToken.username+':'+parsedToken.password)
         }
       });
     }
