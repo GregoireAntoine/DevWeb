@@ -1,9 +1,9 @@
 
 
 
-<ng-container *ngIf="!userlogin; else userConnected">
+<ng-container *ngIf="!(connectedUser$|async); else userConnected">
   <section class="vh-100">
-    <ng-container *ngIf="isLogin; else register">
+    <ng-container *ngIf="canDisplayLogin; else register">
       <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-md-9 col-lg-6 col-xl-5">
@@ -13,12 +13,12 @@
 
           <div  class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
-            <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <label>Nom d'utilisateur</label><br>
               <input class="form-control" type="text" formControlName="username"><br><br>
               <label>Mot de passe</label><br>
               <input class="form-control" type="password" formControlName="password"><br><br>
-              <button type="submit" class="btn btn-primary btn-xl">login</button>
+              <button type="submit" class="btn btn-primary btn-xl">Se connecter</button>
             </form>
             <br>
             <a style="float:left" (click)="onRegister()" >s'inscrire</a>
@@ -29,7 +29,29 @@
       </div>
     </ng-container>
     <ng-template #register>
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                 class="img-fluid" alt="Sample image">
+          </div>
 
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+              <label>Nom d'utilisateur</label><br>
+              <input class="form-control" type="text" formControlName="username"><br><br>
+              <label>email</label><br>
+              <input class="form-control" type="email" formControlName="email"><br><br>
+              <label>Mot de passe</label><br>
+              <input class="form-control" type="password" formControlName="password"><br><br>
+              <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
+            <br>
+            <a style="float:left" (click)="onRegister()" >se connecter</a>
+          </div>
+        </div>
+      </div>
     </ng-template>
   </section>
 </ng-container>

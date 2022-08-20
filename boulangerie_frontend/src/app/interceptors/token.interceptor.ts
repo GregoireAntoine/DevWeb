@@ -11,7 +11,7 @@ export class TokenInterceptor implements HttpInterceptor {
       const parsedToken = JSON.parse(token);
       req = req.clone({
         setHeaders: {
-          'Authorization': `Bearer ${parsedToken.refresh}`
+          'Authorization': `Bearer ${parsedToken.access}`
         }
       });
     }

@@ -6,6 +6,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { Store } from 'src/store';
+import { Observable } from 'rxjs';
+import { User } from 'src/shared/models/user';
 
 @Component({
   selector: 'app-auth',
@@ -16,11 +18,17 @@ export class AuthComponent implements OnInit {
   isLogin: boolean = true;
   faRibbon = faTrash;
   data:any;
-  user : any;
-  userlogin:any;
+  
+  connectedUser$: Observable<User>;
+  
   message:any;
   totalcommande:any;
-  public myform :any = FormGroup;
+  public loginForm :any = FormGroup;
+  public registerForm :any = FormGroup;
+  get canDisplayLogin(): boolean {
+    console.log(this.isLogin);
+    return this.isLogin;
+  };
   
   constructor(private authService : AuthService,
               private router: Router,
@@ -29,12 +37,17 @@ export class AuthComponent implements OnInit {
               private itemsService: ItemsService) { }
   
   ngOnInit(): void {
-    this.myform = new FormGroup({
+    this.connectedUser$ = this.store.select<User>('connectedUser');
+    this.registerForm = new FormGroup({
+      username : new FormControl(''),
+      email : new FormControl(''),
+      password : new FormControl('')
+    });
+    this.loginForm = new FormGroup({
       username : new FormControl(''),
       password : new FormControl('')
     });
-    this.userlogin = localStorage.getItem("user")
-    if(localStorage.getItem("user")!=""){
+    if(this.store.value.connectedUser){
       this.authService.userCommands()
         .subscribe(Response => {
           this.data=Response;
@@ -47,15 +60,26 @@ export class AuthComponent implements OnInit {
     }
   }
   
+  get r(){
+    return this.registerForm.controls
+  }
+  
   get f(){
-    return this.myform.controls
+    return this.loginForm.controls
   }
   
   onSubmit(){
-    this.authService.login(this.f['username'].value,this.f["password"].value)
-      .subscribe((result) => {
-        this.router.navigateByUrl('home');
-      })
+    if (this.isLogin) {
+      this.authService.login(this.f['username'].value,this.f["password"].value)
+        .subscribe((result) => {
+          this.router.navigateByUrl('home');
+        })
+    } else {
+      this.authService.register(this.r['username'].value,this.r["password"].value, this.f["email"].value)
+        .subscribe((result) => {
+          this.router.navigateByUrl('login');
+        })
+    }
   }
   
   deconnection(){

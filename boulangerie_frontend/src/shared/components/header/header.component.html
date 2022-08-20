@@ -18,12 +18,12 @@
 
 
 
-    <div *ngIf="user">
-      <button style="float:left;margin-right:15px;" routerLink="/auth" class="btn btn-primary">{{user}}</button>
+    <div *ngIf="(connectedUser$|async)">
+      <button style="float:left;margin-right:15px;" routerLink="/auth" class="btn btn-primary">{{(connectedUser$|async).username}}</button>
 
     </div>
 
-    <div *ngIf="!user">
+    <div *ngIf="!(connectedUser$|async)">
       <button style="float:right;margin-right:15px;margin-left:15px;" routerLink="/auth" class="btn btn-primary">Login</button>
     </div>
 

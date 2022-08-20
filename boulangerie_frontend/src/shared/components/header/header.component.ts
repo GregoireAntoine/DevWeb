@@ -3,6 +3,7 @@ import { CartService } from 'src/shared/services/cart.service';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Store } from 'src/store';
 import { User } from 'src/shared/models/user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +13,13 @@ import { User } from 'src/shared/models/user';
 export class HeaderComponent implements OnInit {
   
   faRibbon = faCartShopping;
-  user = localStorage.getItem('user')
   public totalItem : number = 0;
   public searchTerm !: string;
+  connectedUser$: Observable<User>;
   constructor(private cartService : CartService, private store: Store) { }
   
   ngOnInit(): void {
+    this.connectedUser$ = this.store.select<User>('connectedUser');
     this.cartService.getProducts()
       .subscribe(res =>{
         this.totalItem = res.length;

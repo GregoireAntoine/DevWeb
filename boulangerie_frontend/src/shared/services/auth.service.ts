@@ -33,7 +33,7 @@ export class AuthService {
       .pipe(
         map((result) => {
           localStorage.setItem('token', JSON.stringify(result.token));
-          this.store.set('connectedUser', result.user);
+          this.store.set('connectedUser', {username: result.user});
         })
       )
   }
@@ -47,8 +47,18 @@ export class AuthService {
       )
   }
   
-  register() {
-  
+  register(username: string, password: string, email: string): Observable<any> {
+    const params = {
+      username: username,
+      email: email,
+      password: password
+    }
+    return this.http.post(`${this.baseRoute}/register`,params)
+      .pipe(
+        map((result) => {
+          return result;
+        })
+      )
   }
   //
   // getMyAccount(): Observable<any> {
