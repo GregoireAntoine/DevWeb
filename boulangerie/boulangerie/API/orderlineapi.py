@@ -6,7 +6,7 @@ from rest_framework import status
 
 
 class OrderlineAPIView(APIView):
-    def update(self, request, pk):
+    def post(self, request, pk):
         try:
             order = Order.objects.filter(id=pk)
             serializer = OrderLineSerializer(order,data=request.data)

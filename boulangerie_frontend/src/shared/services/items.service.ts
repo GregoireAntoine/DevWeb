@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import Config from 'src/app/config/serverUrls.json';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class ItemsService {
   constructor(
     private http: HttpClient
   ) { }
+
 
   getProducts(): Observable<any> {
   return this.http.get(`${this.baseRoute}/product`)
@@ -43,7 +44,15 @@ export class ItemsService {
   }
 
   updateOrderline(order: any): Observable<any> {
-    return this.http.post(`${this.baseRoute}/orderline`, order)
+    const httpOptions = {
+
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa(localStorage.getItem("test1234")+':'+localStorage.getItem("test1234"))
+      })
+    }
+
+    return this.http.post(`${this.baseRoute}/orderline/`, order, httpOptions)
       .pipe(
         map((result: any) => {
           return result;
@@ -53,6 +62,22 @@ export class ItemsService {
 
   delete(orderId: number): Observable<any> {
     return this.http.delete(`${this.baseRoute}/delete/${orderId}`)
+      .pipe(
+        map((result) => {
+          return result;
+        })
+    )
+  }
+  sendOrder(): Observable<any> {
+    const httpOptions = {
+
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa(localStorage.getItem("test1234")+':'+localStorage.getItem("test1234"))
+      })
+    }
+
+    return this.http.delete(`${this.baseRoute}/orderconfirm/`)
       .pipe(
         map((result) => {
           return result;

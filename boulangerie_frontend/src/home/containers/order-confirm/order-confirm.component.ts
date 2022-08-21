@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { TimelineItem } from 'ngx-horizontal-timeline';
+import {map, Observable} from "rxjs";
+import {CartService} from "../../../shared/services/cart.service";
+import {ItemsService} from "../../../shared/services/items.service";
+import {Store} from "../../../store";
 
 @Component({
   selector: 'app-order-confirm',
@@ -28,12 +32,13 @@ export class OrderConfirmComponent implements OnInit {
   counter(i: number) {
     return new Array(i);
   }
-  constructor(private http:HttpClient ) {
-
-  }
+  constructor(private http:HttpClient, private itemsService: ItemsService ) {}
 
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("user"))
+    console.log(localStorage.getItem("pwd"))
+
     this.items.push({
       label: 'Panier',
       icon: 'fa fa-address-book-o',
@@ -81,8 +86,7 @@ export class OrderConfirmComponent implements OnInit {
       })
     };
     this.wait(1000);
-    this.http.get('https://127.0.0.1:8000/api/orderconfirm',httpOptions)
-      .subscribe(Response => {
+    this.itemsService.sendOrder().subscribe(Response => {
         this.order=Response;
         this.orderorder=this.order.order
         this.orderorderline=this.order.orderline
