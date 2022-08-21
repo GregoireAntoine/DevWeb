@@ -9,7 +9,7 @@ class OrderlineAPIView(APIView):
     def update(self, request, pk):
         try:
             order = Order.objects.filter(id=pk)
-            serializer = OrderSerializer(order,data=request.data)
+            serializer = OrderLineSerializer(order,data=request.data)
 
             print(serializer)
             print(order)

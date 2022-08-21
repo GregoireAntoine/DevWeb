@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../shared/services/cart.service';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
 import { TimelineItem } from 'ngx-horizontal-timeline';
 import { Router } from '@angular/router';
-// import { Moment } from 'moment'
+// import { Moment } from 'moment';
 
 @Component({
   selector: 'app-dateorder',
@@ -18,7 +18,7 @@ export class DateorderComponent implements OnInit {
   myFilter = (d: Date | null): boolean => {
     const day = (d || new Date()).getDay();
     // Prevent Saturday and Sunday from being selected.
-    return day !== 2
+    return day !== 0 && day !== 6;
   };
   constructor(private cartService : CartService,public router: Router) {
 
@@ -35,6 +35,8 @@ export class DateorderComponent implements OnInit {
   datefinal : any;
 
   fetchdateselected(){
+    this.myFilter(this.dateselected);
+    console.log(this.dateselected);
     if(this.dateselected != null){
       this.today = new Date()
       this.cartService.info_order.total
