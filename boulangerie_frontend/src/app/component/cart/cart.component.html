@@ -32,7 +32,7 @@
                             <td colspan="3"></td>
                             <td><button (click)="emptycart()" class="btn btn-danger">Vider Panier</button></td>
                             <td><button routerLink="/products" class="btn btn-primary">Continuer vos achats</button></td>
-                            <td><button class="btn btn-success" routerLink="/dateorder">Suivant</button></td>
+                            <td><button class="btn btn-success" id="next_dateorder" routerLink="/dateorder">Suivant</button></td>
                             <td><strong>Total : {{grandTotal | number : '1.2-2'}} €</strong></td>
                         </tr>
                     </tbody>

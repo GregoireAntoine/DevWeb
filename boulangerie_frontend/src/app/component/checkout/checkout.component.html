@@ -39,7 +39,7 @@
         </div>
     </div><br><br>
     <ng-container *ngIf="user !=''">
-    <button class="btn btn-primary" style="margin-left:50%;transform:translate(-50%);"routerLink="/order_confirm" (click)="postfunction()">valider la commande</button>
+    <button class="btn btn-primary" style="margin-left:50%;transform:translate(-50%);"routerLink="/order_confirm" (click)="postfunction()" id="order_confirm">valider la commande</button>
   </ng-container>
   <div *ngIf="user == '' ">
     <button class="btn btn-primary" style="margin-left:50%;transform:translate(-50%);"routerLink="/login" >Login</button>
