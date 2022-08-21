@@ -20,7 +20,6 @@ class RegisterAPIView(APIView):
     # envoie des données de l'utilisateurs en base de données
     def post(self, request, *args, **kwargs):
         self.request = request
-
         userrs = User.objects.create_user(
             self.request.data["username"],
             self.request.data["email"],

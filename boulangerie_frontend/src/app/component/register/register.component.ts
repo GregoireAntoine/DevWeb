@@ -33,16 +33,11 @@ export class RegisterComponent implements OnInit {
       })
     }
     var array_register = {"username" : this.myform.value.username,"email":this.myform.value.email,"password":this.myform.value.password}
-    this.http.post('https://admin.boulangerie.domaineprojetadmin.ovh/api/register',JSON.stringify(array_register),httpOptions).subscribe(data=>{
-      alert("le compte a bien été enregistré")
-    }
-
-    )
+    this.http.post('https://admin.boulangerie.domaineprojetadmin.ovh/api/register',JSON.stringify(array_register),httpOptions).subscribe()
 
     window.location.href = "https://boulangerie.domaineprojetadmin.ovh/login";
   }
-   /*  this.array_register['register'] = {"username" : this.myform.value.username,"email":this.myform.value.email,"password":this.myform.value.password}
-    this.http.post('http://127.0.0.1:8000/api/register',JSON.stringify(this.array_register),httpOptions).subscribe() */
+
 
 
 }
