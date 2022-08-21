@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/service/cart.service';
+import { CartService } from '../../../shared/services/cart.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { TimelineItem } from 'ngx-horizontal-timeline';
 
@@ -109,14 +109,11 @@ export class CheckoutComponent implements OnInit {
     );
 
     console.log(JSON.stringify(this.array_order))
-    this.http.post('https://admin.boulangerie.domaineprojetadmin.ovh/api/order',JSON.stringify(this.array_order),httpOptions).subscribe()
+    this.http.post('https://127.0.0.1:8000/api/order',JSON.stringify(this.array_order),httpOptions).subscribe()
     console.log(JSON.stringify(this.array_order))
     this.cartService.removeAllCart()
 
 
-
-
-
   }
 
-}}
+}

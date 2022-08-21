@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'dateorder', component: DateorderComponent }
+  { path: 'dateorder', component: DateorderComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ]
 
 @NgModule({
