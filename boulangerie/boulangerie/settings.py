@@ -59,12 +59,12 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware"
 ]
 
 ROOT_URLCONF = "boulangerie.urls"
@@ -154,7 +154,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+APPEND_SLASH = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -199,6 +199,7 @@ EMAIL_HOST_PASSWORD = "7452f66ce0e21e"
 EMAIL_PORT = "2525"
 SOCIALACCOUNT_LOGIN_ON_GET = True
 CORS_ALLOWED_ORIGINS = ["http://localhost:4200", "https://admin.boulangerie.domaineprojetadmin.ovh"]
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -206,6 +207,17 @@ CORS_ALLOW_METHODS = [
     "PATCH",
     "POST",
     "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

@@ -24,6 +24,6 @@ def sent_order(subject, message):
         subject=subject,
         message=message,
         from_email="no-reply@doratiotto.com",
-        recipient_list=["françois@burniaux.com", "gregoireantoine21@gmail.com"],
+        recipient_list=["françois@burniaux.com", "gregoireantoine21@gmail.com", "f.temmerman@students.ephec.be"],
         fail_silently=True,
     )

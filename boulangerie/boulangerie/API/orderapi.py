@@ -11,6 +11,7 @@ class OrderAPIView(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
+        print('NON')
         try:
             request.data["order"]["user_id"] = request.user.id
             serializer = OrderSerializer(data=request.data["order"])
@@ -25,21 +26,6 @@ class OrderAPIView(APIView):
                     product.count_sold = product.count_sold + line["quantity"]
                     product.save()
                     serializer_orderline.save()
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
-        except:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-
-    def updateOrder(self, request, pk):
-        try:
-            order = Order.objects.filter(id=pk)
-            serializer = OrderSerializer(order,data=request.data)
-
-            print(serializer)
-            print(order)
-
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         except:
             return Response(status=status.HTTP_400_BAD_REQUEST)
