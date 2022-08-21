@@ -29,6 +29,21 @@ class Order(TestCase):
         assert product_response.status_code == 403
         assert product_response.headers["Content-Type"] == "application/json"
 
+    def test_message(self):
+                s = requests.Session()
+                s.auth = ('gregoire', 'antoine21')
+                s.headers.update({'x-test': 'true'})
+                data={'subject':"sujet","message":"le message"}
+                message = s.post("http://127.0.0.1:8000/api/message", json=data)
+                assert message.status_code == 200
+
+    def test_message_rate(self):
+                s = requests.Session()
+                s.auth = ('gregoire', 'antoine21')
+                s.headers.update({'x-test': 'true'})
+                data={'subjeect':"sujet","message":"le message"}
+                message = s.post("http://127.0.0.1:8000/api/message", json=data)
+                assert message.status_code == 500
 
     def test_create_order(self):
         s = requests.Session()
