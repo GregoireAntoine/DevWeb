@@ -1,0 +1,57 @@
+<html>
+
+<body>
+<ngx-htl-horizontal-timeline [items]="items"></ngx-htl-horizontal-timeline>
+<div style="margin: 0px; padding: 0px;" *ngFor="let order of orderorder;" >
+
+  Votre commande numéro <strong>{{order.ref }}</strong> a bien été enregistrée.<br>
+  Le nombre d'article total est de : <strong>{{order.total_quantity}}</strong><br>
+  Le prix à payer lors de la réception est de : <strong>{{order.total_price | number : '1.2-2'}} €</strong><br>
+  La date prévu pour récupérer la commande est le : <strong>{{order.date_takeaway}}</strong><br>
+  Voici le récapitulatif de celle-ci:<br>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+
+    <th scope="col">Articles</th>
+
+    <th scope="col">Quantité</th>
+
+    <th scope="col">Prix</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let orderline of orderorderline;">
+
+    <td>{{orderline.name}}</td>
+    <td>{{orderline.quantity}}</td>
+    <td>{{orderline.price}} €</td>
+  </tr>
+  </tbody>
+</table>
+
+
+Merci pour votre confiance
+<br><br><br>
+<button class="btn btn-primary" style="margin-left:50%;transform:translate(-50%);" routerLink="/home"> revenir à la page d'acceuil</button>
+</body>
+
+
+<ng-container *ngIf="products.length ==10 ">
+
+  <div class="container">
+    <div class="card">
+
+    </div>
+    <div class="center">
+      <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+      <h4>Votre panier est vide et ou vous n'avez pas choisis de date.</h4>
+
+      <button routerLink="/products" class="btn btn-primary">Voir les produits</button>
+    </div>
+  </div>
+</ng-container>
+
+</html>

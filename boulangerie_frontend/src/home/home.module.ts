@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { CheckoutComponent } from './containers/checkout/checkout.component';
+import { OrderConfirmComponent } from './containers/order-confirm/order-confirm.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'dateorder', component: DateorderComponent },
-  { path: 'checkout', component: CheckoutComponent }
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'order_confirm', component: OrderConfirmComponent }
 ]
 
 @NgModule({
@@ -37,7 +39,8 @@ const routes: Routes = [
     ProductsComponent,
     CartComponent,
     DateorderComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrderConfirmComponent
   ],
   imports: [
     CommonModule,
