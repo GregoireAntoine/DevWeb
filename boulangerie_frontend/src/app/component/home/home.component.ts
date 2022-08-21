@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
 
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa(localStorage.getItem("user")+':'+localStorage.getItem("psw"))
+        'Authorization': 'Basic Z3JlZ29pcmU6YW50b2luZTIx'
       })
     };
     // Process checkout data here
