@@ -29,6 +29,6 @@ class OrderAPIView(APIView):
                     product.count_sold = product.count_sold + line["quantity"]
                     product.save()
                     serializer_orderline.save()
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         except:
             return Response(status=status.HTTP_400_BAD_REQUEST)

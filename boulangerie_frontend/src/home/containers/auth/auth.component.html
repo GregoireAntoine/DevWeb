@@ -1,0 +1,118 @@
+
+
+
+<ng-container *ngIf="!(connectedUser$|async); else userConnected">
+  <section class="vh-100">
+    <ng-container *ngIf="canDisplayLogin; else register">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                 class="img-fluid" alt="Sample image">
+          </div>
+
+          <div  class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <label>Nom d'utilisateur</label><br>
+              <input class="form-control" type="text" formControlName="username"><br>
+              <label>Mot de passe</label><br>
+              <input class="form-control" type="password" formControlName="password"><br>
+              <button type="submit" class="btn btn-primary btn-xl">Se connecter</button>
+            </form>
+            <br>
+            <a style="float:left" (click)="onRegister()" >s'inscrire</a>
+          </div>
+
+
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #register>
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                 class="img-fluid" alt="Sample image">
+          </div>
+
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+              <label>Nom d'utilisateur</label><br>
+              <input class="form-control" type="text" formControlName="username"><br>
+              <label>email</label><br>
+              <input class="form-control" type="email" formControlName="email"><br>
+              <label>Mot de passe</label><br>
+              <input class="form-control" type="password" formControlName="password"><br>
+              <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
+            <br>
+            <a style="float:left" (click)="onRegister()" >se connecter</a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </section>
+</ng-container>
+
+<ng-template #userConnected>
+  <h2>Votre compte :</h2>
+  <button  class="btn btn-primary"  id="deconnexion" (click)="deconnection()">se déconnecter</button>
+  <div *ngIf="totalcommande == 0 ">
+    <br><br><br><br>
+    <p class="text-center align-middle" > Vous n'avez aucunes commandes.</p>
+    <br>
+    <button  routerLink="/products" class="btn btn-primary boutonproduit">voir les produits</button>
+  </div>
+
+  <div *ngIf="isUpdatingQuantity">
+    <br>
+    Modification de la quantité.
+    <input class="form-control" type="text" [(ngModel)]="newQuantity">
+    <button class="btn btn-success btn-xl" (click)="onUpdateQuantity()">Valider</button>
+    <button class="btn btn-secondary btn-xl" (click)="onToggleUpdateQuantity()">Annuler</button>
+    <br>
+  </div>
+  <div *ngIf="totalcommande != 0 ">
+    <table *ngFor="let cat of data;" style="width:70%;margin-top:5rem;"class="table table-bordered">
+      <thead>
+      <tr class="table-primary">
+        <th scope="col">ref : {{cat.order.ref}}</th>
+        <th scope="col">Passé le : {{cat.order.date_order}}</th>
+        <th scope="col">Prévu le : {{cat.order.date_takeaway}}</th>
+
+        <th scope="col" class="text-center"></th>
+
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let product of cat.orderline;" >
+
+        <td class="text-center">{{product.name}}</td>
+        <td class="text-center" >
+          <ng-container>
+            <h4>{{product.quantity}}</h4>
+            <button class="btn btn-warning btn-xl" (click)="onToggleUpdateQuantity(product)">Modifier la quantité</button>
+
+          </ng-container>
+
+        </td>
+        <td class="text-center">{{product.price}} €</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">
+            <div class="col">Quantité : {{cat.order.total_quantity}}</div>
+
+        </th>
+        <th scope="col">Total : {{cat.order.total_price | number : '1.2-2'}} €</th>
+
+        <th scope="col"> <button class="btn btn-danger" id="poubelle" (click)="deletefunction(cat.order)" ><fa-icon [icon]="faRibbon"></fa-icon></button></th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>

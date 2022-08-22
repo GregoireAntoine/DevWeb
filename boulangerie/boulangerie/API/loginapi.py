@@ -19,6 +19,7 @@ class LoginView(APIView):
     # envoie des informations de connexion
     def post(self, request, format=None):
         serializer = LoginSerializer(data=request.data)
+
         serializer.is_valid(raise_exception=True)
         username = serializer.data.get("username")
         password = serializer.data.get("password")

@@ -32,6 +32,7 @@ from .views import (
     AccountAPIView,
     BestSellerAPIView,
     OrderConfirmAPIView,
+    OrderlineAPIView,
 
     MessageAPIView,
     MyCommandAPIView,
@@ -43,17 +44,23 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
-   ### Définition des chemin 
+   ### Définition des chemin
     path("admin/", admin.site.urls), # accès à la page d'administration
     path("api-auth/", include("rest_framework.urls")), # accès à l'api d'authentification
+
+    path("admin/", admin.site.urls),
+    path("api-auth/", include("rest_framework.urls")),
     path("api/productcategory", ProductCategoryAPIView.as_view()),
     path("api/productcategory/<int:pk>/", ProductCategoryAPIView.as_view()),
     path("api/product", ProductAPIView.as_view()),
+    path("api/orderline/<int:pk>/", OrderlineAPIView.as_view(), name="orderline"),
+    path("product", ProductAPIView.as_view()),
     path("api/product/<int:pk>/", ProductAPIView.as_view()),# int pk correspondt à un integer en url qui va définir un id dans la class product
     path("api/message", MessageAPIView.as_view()),
     path("api/orderconfirm", OrderConfirmAPIView.as_view()),
     path("api/bestsellers", BestSellerAPIView.as_view()),
     path("api/order", OrderAPIView.as_view()),
+    path("api/order/<int:pk>/", OrderAPIView.as_view()),
     path("api/mycommand", MyCommandAPIView.as_view()),
     path("api/login", LoginView.as_view()),
     path("api/delete/<int:pk>/", DeletePostViewSet.as_view()),

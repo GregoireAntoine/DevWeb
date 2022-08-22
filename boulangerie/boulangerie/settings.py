@@ -28,8 +28,8 @@ SECRET_KEY = "django-insecure-^4!#4*_=r)2wl%o^=_ng!hcyqe29i856+=t0d02iza*5dfv2wb
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['51.83.98.86','admin.boulangerie.domaineprojetadmin.ovh']
-CSRF_TRUSTED_ORIGINS = ['http://admin.boulangerie.domaineprojetadmin.ovh', 'https://admin.boulangerie.domaineprojetadmin.ovh']
+ALLOWED_HOSTS = ['51.83.98.86','admin.boulangerie.domaineprojetadmin.ovh', '127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = ['http://admin.boulangerie.domaineprojetadmin.ovh', 'https://admin.boulangerie.domaineprojetadmin.ovh', 'http://localhost/']
 
 
 # Application definition
@@ -52,18 +52,19 @@ INSTALLED_APPS = [
     "django_static_fontawesome",
     "rest_framework",
     "rest_framework_simplejwt",
+    "corsheaders"
     ###'fontawesomefree',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware"
 ]
 
 ROOT_URLCONF = "boulangerie.urls"
@@ -94,9 +95,9 @@ WSGI_APPLICATION = "boulangerie.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "boulangerie",
-        "USER": "django",
-        "PASSWORD": "Gregoire21#21",
+        "NAME": "test",
+        "USER": "postgres",
+        "PASSWORD": "root",
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -153,7 +154,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+APPEND_SLASH = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -197,8 +198,27 @@ EMAIL_HOST_USER = "3a2a08e4a7fe62"
 EMAIL_HOST_PASSWORD = "7452f66ce0e21e"
 EMAIL_PORT = "2525"
 SOCIALACCOUNT_LOGIN_ON_GET = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
-
+CORS_ALLOWED_ORIGINS = ["http://localhost:4200", "https://admin.boulangerie.domaineprojetadmin.ovh"]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.

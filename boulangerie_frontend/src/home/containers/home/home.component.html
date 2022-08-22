@@ -1,0 +1,210 @@
+<div class="hero-header">
+  <div class=" imagedebut text-center  ">
+    <p class="align-middle">Boulangerie Dorattioto</p>
+  </div>
+</div>
+
+<br>
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <ng-container *ngIf="(connectedUser$|async)">
+    <h2>Nos bests sellers</h2>
+  </ng-container>
+
+
+  <div class="container">
+    <div class="row " >
+      <div style="margin-top:10px" class="col-md-4 mx-auto my-5"  *ngFor="let product of product;">
+
+
+        <div   id="{{product.product_category_id_id}}">
+          <div class="card mb-4 box-shadow">
+            <a href="">
+              <img height="220"class="card-img-top " [src]="getURLImage(product.image)" alt="Card image cap">
+            </a>
+            <div class="card-body">
+              <p class="card-text text-center text-capitalize"  >{{product.name}}   {{product.price}} €</p>
+              <div class=" text-center ">
+                <ng-container *ngIf="!(connectedUser$|async)">
+                  <select    [(ngModel)]='selectedOption[product.id]'  >
+
+                    <option  *ngFor='let in of counter(50) ;let i = index '  [id]=i+1 [value]=i+1>{{i+1}}</option>
+                  </select>
+
+                  <button class="btn btn-primary" (click)=addtocart(product,selectedOption[product.id],product.id) style="margin-left:10px;">  Ajouter au panier</button>
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </ng-container>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div><br>
+<!-- Container (Services Section) -->
+<div id="services" class=" container-fluid text-center ">
+
+
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+
+      <h2>Fait à la main</h2>
+
+    </div>
+    <div class="col-sm-4">
+
+      <h2>Fait sur plaçe</h2>
+
+    </div>
+    <div class="col-sm-4">
+
+      <h2>Produits 100% belges</h2>
+
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+
+      <h2>Ingrédients locaux</h2>
+
+    </div>
+    <div class="col-sm-4">
+
+      <h2>Produits sans additifs</h2>
+
+    </div>
+    <div class="col-sm-4">
+
+      <h2 style="color:#303030;">Boulangerie familliale</h2>
+
+    </div>
+  </div>
+</div>
+<div class=" text-center">
+  <br><br>
+
+  <h2>Horaire</h2><br>
+  <h4> Lundi : 08:00-18:00 </h4>
+  <h4> Mardi : Fermé </h4>
+  <h4> Mercredi : 08:00-18:00 </h4>
+  <h4> Jeudi : 08:00-18:00 </h4>
+  <h4> Vendredi : 08:00-18:00 </h4>
+  <h4> Samedi : 08:00-18:00 </h4>
+  <h4> Dimanche : 07:15-17:00 </h4>
+</div>
+<div class="mapouter">
+
+  <h2 class="text-center" style="background-color: #f6f6f6; padding-bottom:1rem; margin:0;">ADRESSE<br></h2>
+  <div class="gmap_canvas">
+    <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Chau.%20de%20Nivelles%203/G,%205032%20Gembloux&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    <br><style>.mapouter{position:relative;text-align:right;height:500px;width:100%;}</style>
+    <style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style>
+  </div>
+</div>
+<br><br><br><br>
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>A propos de la boulangerie</h2><br>
+      <h4>Cette boulangerie ouverte par le couple Doratiotto tout deux originaires de la région de Mazy s'est affirmée au fil du temps comme la boulangerie de la région.</h4><br>
+      <p>Active depuis les années 80, cette boulangerie à su adapter ses produits au fil du temps et de la demande qui évolue de plus en plus. Plus de 12 Pains différents sont proposés à la vente. Sans oublier les différentes viennoiseries, gâteaux et tartes. </p>
+      <br>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>
+
+
+
+<!--Section: Contact v.2-->
+<section class="mb-4" style="padding:20px">
+
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contactez-nous</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">Vous avez une question? N'hésitez pas à nous contacter directement. Notre équipe se fera un plaisir de vous aider.</p>
+
+  <div class="row">
+
+    <!--Grid column-->
+    <div class="col-md-8 mb-md-0 mb-5">
+      <form [formGroup]="messageform" id="contact-form" name="contact-form" (ngSubmit)="onSubmit()">
+        <!--Grid row-->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="md-form mb-0">
+              <label for="subject">
+                Sujet
+              </label>
+              <input id="subject" type="text" class="form-control" formControlName="subject">
+            </div>
+          </div>
+        </div>
+        <!--Grid row-->
+        <br>
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-12">
+
+            <div class="md-form">
+              <label for="message">Votre message</label>
+              <textarea class="form-control md-textarea" id="message" type="text" formControlName="message"></textarea>
+
+
+            </div>
+
+          </div>
+        </div>
+        <!--Grid row-->
+        <br>
+        <ng-container *ngIf="user ==''"> <p style="color:red"><a routerLink="/login">Connectez </a>  vous pour pouvoir envoyer un message. </p></ng-container>
+        <ng-container *ngIf="user !=''">
+          <div class="text-center text-md-left">
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+          </div>
+        </ng-container>
+      </form>
+
+
+      <div class="status"></div>
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-md-4 text-center">
+      <ul class="list-unstyled mb-0">
+        <li><i class="fas fa-map-marker-alt fa-2x"></i>
+          <p>Mazy, BE</p>
+        </li>
+
+        <li><i class="fas fa-phone mt-4 fa-2x"></i>
+          <p>081 63 33 41</p>
+        </li>
+
+        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+          <p>doratiottoboulangerie@gmail.com</p>
+        </li>
+      </ul>
+    </div>
+    <!--Grid column-->
+
+  </div>
+
+</section>
+
+<footer class="d-flex justify-content-center" ><button  routerLink="/cdv" class="btn btn-primary boutoncdv">CDV</button></footer>
