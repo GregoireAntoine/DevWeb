@@ -52,7 +52,7 @@ export class ItemsService {
       })
     }
 
-    return this.http.post(`${this.baseRoute}/orderline/`, order, httpOptions)
+    return this.http.post(`${this.baseRoute}/orderline/`, order)
       .pipe(
         map((result: any) => {
           return result;
@@ -68,7 +68,7 @@ export class ItemsService {
         })
     )
   }
-  sendOrder(): Observable<any> {
+  createOrder(order: any): Observable<any> {
     const httpOptions = {
 
       headers: new HttpHeaders({
@@ -77,11 +77,12 @@ export class ItemsService {
       })
     }
 
-    return this.http.delete(`${this.baseRoute}/orderconfirm/`)
+    return this.http.post(`${this.baseRoute}/orderconfirm/`, order, httpOptions)
       .pipe(
-        map((result) => {
+        map((result: any) => {
           return result;
         })
-    )
+      )
+
   }
 }

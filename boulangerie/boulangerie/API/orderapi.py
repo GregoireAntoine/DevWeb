@@ -11,7 +11,6 @@ class OrderAPIView(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        print('NON')
         try:
             request.data["order"]["user_id"] = request.user.id
             serializer = OrderSerializer(data=request.data["order"])

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../shared/services/cart.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { TimelineItem } from 'ngx-horizontal-timeline';
+import {ItemsService} from "../../../shared/services/items.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-checkout',
@@ -21,7 +23,7 @@ export class CheckoutComponent implements OnInit {
   public tab: any = [];
   public array_order: any = {};
   user:any;
-  constructor(private cartService : CartService,private http:HttpClient) { }
+  constructor(private cartService : CartService,private http:HttpClient,   private itemsService: ItemsService,  private router: Router) { }
 
 
   ngOnInit(): void {
@@ -78,6 +80,9 @@ export class CheckoutComponent implements OnInit {
 
   postfunction(){
     console.log("toto")
+    // this.itemsService.createOrder(this.form.getRawValue()).subscribe((result) => {
+    //   this.router.navigateByUrl('home')
+    // })
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

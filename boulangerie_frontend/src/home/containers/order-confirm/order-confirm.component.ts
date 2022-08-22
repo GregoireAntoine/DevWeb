@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { TimelineItem } from 'ngx-horizontal-timeline';
 import {map, Observable} from "rxjs";
-import {CartService} from "../../../shared/services/cart.service";
-import {ItemsService} from "../../../shared/services/items.service";
-import {Store} from "../../../store";
 
 @Component({
   selector: 'app-order-confirm',
@@ -32,7 +29,9 @@ export class OrderConfirmComponent implements OnInit {
   counter(i: number) {
     return new Array(i);
   }
-  constructor(private http:HttpClient, private itemsService: ItemsService ) {}
+  constructor(private http:HttpClient ) {
+
+  }
 
 
   ngOnInit(): void {
@@ -86,7 +85,8 @@ export class OrderConfirmComponent implements OnInit {
       })
     };
     this.wait(1000);
-    this.itemsService.sendOrder().subscribe(Response => {
+    this.http.get('https://127.0.0.1:8000/api/orderconfirm',httpOptions)
+      .subscribe(Response => {
         this.order=Response;
         this.orderorder=this.order.order
         this.orderorderline=this.order.orderline
