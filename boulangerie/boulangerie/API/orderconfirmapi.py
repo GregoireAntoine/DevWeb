@@ -38,13 +38,13 @@ class OrderConfirmAPIView(APIView):
             order_line_tr = "<br>".join(lst_tr)
             compteur = compteur + 1
 
-       
+
         # On rassemble les données order et orderlines dans un seul tableau.
         tableau_data = {
             "order": serializer.data,
             "orderline": serializer_orderline.data,
         }
-        # appelle de la fopnction permettant d'envoyé le mail de confirmation 
+        # appelle de la fonction permettant d'envoyé le mail de confirmation
         sent_order(tableau_data, order_line_tr, request.user, request.user.email)
 
         return Response(tableau_data)
