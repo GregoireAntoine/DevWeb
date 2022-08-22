@@ -14,13 +14,12 @@ class RegisterAPIView(APIView):
     Return the REST Framework Token Object's key.
     """
 
-    permission_classes = (AllowAny,)
+    permission_classes = (AllowAny)
     serializer_class = RegisterSerializer
 
-    ###token_model = TokenModel
+    # envoie des données de l'utilisateurs en base de données
     def post(self, request, *args, **kwargs):
         self.request = request
-
         userrs = User.objects.create_user(
             self.request.data["username"],
             self.request.data["email"],

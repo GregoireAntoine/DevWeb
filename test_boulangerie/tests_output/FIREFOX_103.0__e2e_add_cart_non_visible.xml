@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="e2e_add_cart_non_visible"
+    errors="0" failures="0" hostname="" id="" package="e2e_add_cart_non_visible" skipped="0"
+    tests="1" time="4.134" timestamp="">
+  
+    <testcase name="Add Cart non visible for non authenticate" classname="e2e_add_cart_non_visible" time="4.134" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

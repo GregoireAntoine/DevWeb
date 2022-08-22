@@ -1,0 +1,31 @@
+<header>
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+
+            </i>
+            <button routerLink="/home" class="btn btn-primary"><strong style="font-size: 30px; color:rgb(255, 255, 255);" >Doratiotto</strong></button>
+            <button style="float:right;margin-left:15px;" routerLink="/products" id="product"class="btn btn-primary">Produits</button>
+            <button style="float:right;margin-left:15px;" href="#apropos" id="aproposbouton"class="btn btn-primary">à propos</button>
+
+            <button routerLink="cart" id="cart" class="btn btn-primary" style="margin-left:10px;" >
+              <fa-icon [icon]="faRibbon"></fa-icon>
+              <div style="font-size: 10px; margin-left:10px;" class="badge bg-danger">{{totalItem}}</div>
+
+          </button>
+
+        </div>
+
+
+
+<div *ngIf="user != ''">
+        <button style="float:left;margin-right:15px;"routerLink="/login" class="btn btn-primary">{{user}}</button>
+
+  </div>
+
+  <div *ngIf="user == '' || user == null ">
+    <button style="float:right;margin-right:15px;margin-left:15px;"routerLink="/login" id="login" class="btn btn-primary">Login</button>
+</div>
+
+    </div>
+</header>

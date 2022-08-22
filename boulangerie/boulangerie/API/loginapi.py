@@ -7,6 +7,7 @@ from rest_framework import status
 from django.contrib.auth import authenticate
 
 def get_tokens_for_user(user):
+    # Récupération du token pour l'utilisateur
     refresh = RefreshToken.for_user(user)
     return {
         "refresh": str(refresh),
@@ -15,6 +16,7 @@ def get_tokens_for_user(user):
 
 
 class LoginView(APIView):
+    # envoie des informations de connexion
     def post(self, request, format=None):
         serializer = LoginSerializer(data=request.data)
 
@@ -22,8 +24,7 @@ class LoginView(APIView):
         username = serializer.data.get("username")
         password = serializer.data.get("password")
         user = authenticate(username=username, password=password)
-
-
+        # si il a un utilisateur renvoyé le token et un message de succes ainsi que le username
         if user is not None:
             token = get_tokens_for_user(user)
             return Response(

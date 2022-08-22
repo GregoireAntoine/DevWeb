@@ -1,0 +1,28 @@
+Release 1.0.0
+- Affichage des produits.
+
+Release 1.0.1 
+- Tri des produits selon leurs catégorie.
+
+Release 1.0.2 
+- Page d'acceuil.
+- Mise en place du panier.
+- Mise en place de la trame de commande.
+
+Release 1.0.3
+- Enregistrement de commande en base de donnée.
+
+Release 1.0.4 
+- Mise en place d'un mail de confirmation de commande.
+- Mise en place des meilleures ventes.
+- Mise en place de la page de confirmation de commande.
+
+Release 1.0.5
+- Mise en place de l'envoie de message au boulanger.
+
+Release 1.0.6
+- Mise en place d'un sytème de login.
+- Mise en place d'un système de création de compte.
+
+Release 1.0.7
+- Mise en place de la page de conditions générale de vente 
