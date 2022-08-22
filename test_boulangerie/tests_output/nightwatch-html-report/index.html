@@ -1,0 +1,256 @@
+  <head>
+    <title>Nightwatch Reporter</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div id="wrap">
+      <div id="main">
+        <section id="navigation">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="https://nightwatchjs.org" target="_blank"><div class="logo"></div></a>
+            </nav>
+          </div>
+        </section>
+        <section id="auxbar">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="auxcol col-md-4 align-items-center">
+                <div class="auxcontainer">
+                  <div class="auxbox autobox">
+                  </div>
+                </div>
+              </div>
+              <div class="auxcol col-md-4 align-items-center">
+                <div class="auxcontainer align-h-center">
+                  <h1>Nightwatch.js – <strong>Test Report</strong></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section id="sessions">
+          <div class="row">
+          <div class="col-md-12">
+          <div class="container-fluid">
+            
+                <div id="s1" class="sessionbox">
+                  
+  <div class="sessionbox-indicator indicator-success sessionbox-padding">
+    <div class="row">
+      <div class="col-md-1">
+        <div class="statusbadge statusbadge-success">Success</div>
+      </div>
+      
+      <div class="col-md-11 separator-l">
+        <div class="row sessionbox-head">
+          <div class="col-md-8">
+             e2e_create_user
+          </div>
+        </div>
+        <div id="tabs-s1" class="row sessionbox-tabs">
+          <div class="col-md-12">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab1" role="tablist">
+                <a class="nav-item nav-link active" id="nav-s1-t1-tab" data-bs-toggle="tab" href="#nav-s1-t1" role="tab" aria-controls="nav-s1-t1" aria-selected="true">Details</a>
+                <a class="nav-item nav-link" id="nav-s1-t3-tab" data-bs-toggle="tab" href="#nav-s1-t3" role="tab" aria-controls="nav-s1-t3" aria-selected="true">Raw HTTP Log</a>
+              </div>
+            </nav>
+
+            <div class="tab-content" id="nav-tab1Content">
+              <div class="tab-pane show active" id="nav-s1-t1" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="statgroup autobox">
+                      <div class="statbox autobox">
+                        <div class="label-sessionfull">Status</div>
+                        <div class="stat-sessionfull">PASSED</div>
+                      </div>
+                    </div>
+                    <div class="statgroup autobox">
+                     <div class="statbox autobox">
+                       <div class="label-sessionfull">Tests</div>
+                       <div class="stat-sessionfull">1</div>
+                     </div>
+                     <div class="statbox autobox">
+                      <div class="label-sessionfull">Failed</div>
+                      <div class="stat-sessionfull">0</div>
+                    </div>
+                    <div class="statbox autobox">
+                      <div class="label-sessionfull">Errors</div>
+                      <div class="stat-sessionfull">0</div>
+                    </div>
+                    <div class="statbox autobox">
+                      <div class="label-sessionfull">Module Path</div>
+                      <div class="stat-sessionfull">/tests/e2e_create_user.js</div>
+                    </div>
+                    </div>
+                    <div class="statgroup autobox">
+                      <div class="statbox autobox">
+                        <div class="label-sessionfull">Duration</div>
+                        <div class="stat-sessionfull">6.948 secs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane raw-http-log" id="nav-s1-t3" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="raw-http-log code-sessionfull"><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session  </span></b></div><div>{
+     desiredCapabilities: { browserName: <span style="color:#0A0">&#39;firefox&#39;<span style="color:#FFF">, name: <span style="color:#0A0">&#39;End 2 End - Order&#39;<span style="color:#FFF"> },
+     capabilities: { alwaysMatch: { browserName: <span style="color:#0A0">&#39;firefox&#39;<span style="color:#FFF"> } }
+  }</span></span></span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session (2844ms)</div><div>{
+     value: {
+       sessionId: <span style="color:#0A0">&#39;75d84ed7-4130-4493-a14e-34bef38e6b6c&#39;<span style="color:#FFF">,
+       capabilities: {
+         acceptInsecureCerts: <span style="color:#A50">false<span style="color:#FFF">,
+         browserName: <span style="color:#0A0">&#39;firefox&#39;<span style="color:#FFF">,
+         browserVersion: <span style="color:#0A0">&#39;103.0&#39;<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:accessibilityChecks&#39;<span style="color:#FFF">: <span style="color:#A50">false<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:buildID&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;20220718155818&#39;<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:geckodriverVersion&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;0.30.0&#39;<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:headless&#39;<span style="color:#FFF">: <span style="color:#A50">false<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:platformVersion&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;21.5.0&#39;<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:processID&#39;<span style="color:#FFF">: <span style="color:#A50">6940<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:profile&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;/var/folders/tk/cqc18lf14n1fx4v6c240glg40000gn/T/rust_mozprofileHFMuQv&#39;<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:shutdownTimeout&#39;<span style="color:#FFF">: <span style="color:#A50">60000<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:useNonSpecCompliantPointerOrigin&#39;<span style="color:#FFF">: <span style="color:#A50">false<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:webdriverClick&#39;<span style="color:#FFF">: <span style="color:#A50">true<span style="color:#FFF">,
+         <span style="color:#0A0">&#39;moz:windowless&#39;<span style="color:#FFF">: <span style="color:#A50">false<span style="color:#FFF">,
+         pageLoadStrategy: <span style="color:#0A0">&#39;normal&#39;<span style="color:#FFF">,
+         platformName: <span style="color:#0A0">&#39;mac&#39;<span style="color:#FFF">,
+         proxy: {},
+         setWindowRect: <span style="color:#A50">true<span style="color:#FFF">,
+         strictFileInteractability: <span style="color:#A50">false<span style="color:#FFF">,
+         timeouts: { implicit: <span style="color:#A50">0<span style="color:#FFF">, pageLoad: <span style="color:#A50">300000<span style="color:#FFF">, script: <span style="color:#A50">30000<span style="color:#FFF"> },
+         unhandledPromptBehavior: <span style="color:#0A0">&#39;dismiss and notify&#39;<span style="color:#FFF">
+       }
+     }
+  }</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/url  </span></b></div><div>{ url: <span style="color:#0A0">&#39;https://www.boulangerie.domaineprojetadmin.ovh/register&#39;<span style="color:#FFF"> }</span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/url (3580ms)</div><div>{ value: <b>null<span style="font-weight:normal;text-decoration:none;font-style:normal"> }</span></b></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements  </span></b></div><div>{ using: <span style="color:#0A0">&#39;css selector&#39;<span style="color:#FFF">, value: <span style="color:#0A0">&#39;body&#39;<span style="color:#FFF"> }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements (14ms)</div><div>{
+     value: [
+       {
+         <span style="color:#0A0">&#39;element-6066-11e4-a52e-4f735466cecf&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;231dc34e-5913-4a43-aa1f-1a82f79bcca8&#39;<span style="color:#FFF">
+       }
+     ]
+  }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/execute/sync  </span></b></div><div>{
+     script: <span style="color:#0A0">&#39;return (function(){return (function(){var k=this||self;function aa(a){return&quot;string&quot;==typeof a}function ba(a,b){a=a.split(&quot;.&quot;);var c=k;a[0]in c||&quot;undefined&quot;==typeof c.execScript||c.execScript(&quot;var &quot;+a... (44027 characters)&#39;<span style="color:#FFF">,
+     args: [
+       {
+         <span style="color:#0A0">&#39;element-6066-11e4-a52e-4f735466cecf&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;231dc34e-5913-4a43-aa1f-1a82f79bcca8&#39;<span style="color:#FFF">,
+         ELEMENT: <span style="color:#0A0">&#39;231dc34e-5913-4a43-aa1f-1a82f79bcca8&#39;<span style="color:#FFF">
+       }
+     ]
+  }</span></span></span></span></span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/execute/sync (13ms)</div><div>{ value: <span style="color:#A50">true<span style="color:#FFF"> }</span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements  </span></b></div><div>{ using: <span style="color:#0A0">&#39;css selector&#39;<span style="color:#FFF">, value: <span style="color:#0A0">&#39;input[type=text]&#39;<span style="color:#FFF"> }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements (4ms)</div><div>{
+     value: [
+       {
+         <span style="color:#0A0">&#39;element-6066-11e4-a52e-4f735466cecf&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;e840ca6f-e125-41e7-85e8-ab2656502694&#39;<span style="color:#FFF">
+       }
+     ]
+  }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/e840ca6f-e125-41e7-85e8-ab2656502694/value  </span></b></div><div>{
+     text: <span style="color:#0A0">&#39;francoissssssssss&#39;<span style="color:#FFF">,
+     value: [
+       <span style="color:#0A0">&#39;f&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;r&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;a&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;n&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;c&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;o&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;i&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">
+     ]
+  }</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/e840ca6f-e125-41e7-85e8-ab2656502694/value (42ms)</div><div>{ value: <b>null<span style="font-weight:normal;text-decoration:none;font-style:normal"> }</span></b></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements  </span></b></div><div>{ using: <span style="color:#0A0">&#39;css selector&#39;<span style="color:#FFF">, value: <span style="color:#0A0">&#39;input[type=email]&#39;<span style="color:#FFF"> }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements (3ms)</div><div>{
+     value: [
+       {
+         <span style="color:#0A0">&#39;element-6066-11e4-a52e-4f735466cecf&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;e2c0f7af-ca88-45c8-bdfb-33ae1b0a0be4&#39;<span style="color:#FFF">
+       }
+     ]
+  }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/e2c0f7af-ca88-45c8-bdfb-33ae1b0a0be4/value  </span></b></div><div>{
+     text: <span style="color:#0A0">&#39;francois@burniaux.com&#39;<span style="color:#FFF">,
+     value: [
+       <span style="color:#0A0">&#39;f&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;r&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;a&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;n&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;c&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;o&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;i&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;s&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;@&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;b&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;u&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;r&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;n&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;i&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;a&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;u&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;x&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;.&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;c&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;o&#39;<span style="color:#FFF">,
+       <span style="color:#0A0">&#39;m&#39;<span style="color:#FFF">
+     ]
+  }</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/e2c0f7af-ca88-45c8-bdfb-33ae1b0a0be4/value (28ms)</div><div>{ value: <b>null<span style="font-weight:normal;text-decoration:none;font-style:normal"> }</span></b></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements  </span></b></div><div>{ using: <span style="color:#0A0">&#39;css selector&#39;<span style="color:#FFF">, value: <span style="color:#0A0">&#39;input[type=password]&#39;<span style="color:#FFF"> }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements (3ms)</div><div>{
+     value: [
+       {
+         <span style="color:#0A0">&#39;element-6066-11e4-a52e-4f735466cecf&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;b7ddde86-9e50-4f55-840b-bf0fecee756b&#39;<span style="color:#FFF">
+       }
+     ]
+  }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/b7ddde86-9e50-4f55-840b-bf0fecee756b/value  </span></b></div><div>{ text: <span style="color:#0A0">&#39;12345&#39;<span style="color:#FFF">, value: [ <span style="color:#0A0">&#39;1&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;2&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;3&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;4&#39;<span style="color:#FFF">, <span style="color:#0A0">&#39;5&#39;<span style="color:#FFF"> ] }</span></span></span></span></span></span></span></span></span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/b7ddde86-9e50-4f55-840b-bf0fecee756b/value (25ms)</div><div>{ value: <b>null<span style="font-weight:normal;text-decoration:none;font-style:normal"> }</span></b></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements  </span></b></div><div>{ using: <span style="color:#0A0">&#39;css selector&#39;<span style="color:#FFF">, value: <span style="color:#0A0">&#39;button[type=submit]&#39;<span style="color:#FFF"> }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/elements (4ms)</div><div>{
+     value: [
+       {
+         <span style="color:#0A0">&#39;element-6066-11e4-a52e-4f735466cecf&#39;<span style="color:#FFF">: <span style="color:#0A0">&#39;11f10f38-68b3-4020-8525-c1ff499b1f03&#39;<span style="color:#FFF">
+       }
+     ]
+  }</span></span></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/11f10f38-68b3-4020-8525-c1ff499b1f03/click  </span></b></div><div>{}</div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 POST /session/75d84ed7-4130-4493-a14e-34bef38e6b6c/element/11f10f38-68b3-4020-8525-c1ff499b1f03/click (2554ms)</div><div>{ value: <b>null<span style="font-weight:normal;text-decoration:none;font-style:normal"> }</span></b></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Request <b><span style="color:#0AA">DELETE /session/75d84ed7-4130-4493-a14e-34bef38e6b6c  </span></b></div><div><span style="color:#0A0">&#39;&#39;<span style="color:#FFF"></span></span></div><div style="margin-left: -15px;margin-top: 10px; background: #0c5460">  Response 200 DELETE /session/75d84ed7-4130-4493-a14e-34bef38e6b6c (649ms)</div><div>{ value: <b>null<span style="font-weight:normal;text-decoration:none;font-style:normal"> }</span></b></div></div>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div id="sessionfull-accordion">
+            
+                <div class="card">
+   
+
+    <div class="card-header" id="h2">
+      <h5 class="mb-0">
+        <button class="btn btn-link btn-collapse" data-bs-toggle="collapse" data-bs-target="#s0ac1" aria-expanded="false" aria-controls="s0ac1">
+          Send Message
+        </button>
+      </h5>
+    </div>
+
+    <div id="s0ac1" class="collapse" aria-labelledby="s0ah1" data-bs-parent="#sessionfull-accordion">
+<div class="card-body"><pre>
+<div class="code-session-full"><span style="color:#0EDC8A">✔</span> Element &lt;body&gt; was visible after 30 milliseconds.</div></pre></div></div>
+
+</div>
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                
+          </div>
+          </div>
+         </div>
+        </section>
+      </div>
+    </div>
+
+    <section id="footer">
+      <div class="container-fluid">
+        <div class="row footerstarbg">
+          <div class="col-md-12">
+            <nav class="footer-box">
+              <div class="footer-links">
+                  <a class="cr" href="https://nightwatchjs.org" target="_blank">© 2022 Nightwatch.js</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
